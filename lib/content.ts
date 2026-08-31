@@ -2,7 +2,7 @@ export const brand = {
   name: "Omkar AI Innovation",
   tagline: "Be Automated · Be Ahead",
   subline: "Where Automation Meets Solution",
-  site: "omkaraiinnovation.com",
+  site: "www.omkaraiinnovation.com",
   email: "omkaraiinnovation@gmail.com",
   phone: "7004583808",
   offices: [

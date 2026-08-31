@@ -1,7 +1,14 @@
+"use client";
+
 import { brand } from "@/lib/content";
 import { ArrowUpRight } from "lucide-react";
+import { trackOutboundLink } from "@/lib/ga4";
 
 export default function CTA() {
+  const handleExploreClick = () => {
+    trackOutboundLink(brand.courseUrl, `Explore on ${brand.site}`);
+  };
+
   return (
     <section className="border-b border-line relative overflow-hidden">
       <div className="pointer-events-none absolute inset-0">
@@ -29,6 +36,7 @@ export default function CTA() {
             href={brand.courseUrl}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={handleExploreClick}
             className="text-sm text-text-dim hover:text-text underline decoration-line underline-offset-4 transition-colors"
           >
             Explore on {brand.site}

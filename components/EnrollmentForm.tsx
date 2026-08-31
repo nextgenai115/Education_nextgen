@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Send, CheckCircle, Loader2 } from "lucide-react";
+import { trackFormSubmission } from "@/lib/ga4";
 
 export default function EnrollmentForm() {
   const [formData, setFormData] = useState({
@@ -30,9 +31,11 @@ export default function EnrollmentForm() {
 
       setStatus("success");
       setFormData({ name: "", email: "", phone: "" });
+      trackFormSubmission("enrollment_form", "success");
     } catch (error) {
       setStatus("error");
       setErrorMessage("Something went wrong. Please try again.");
+      trackFormSubmission("enrollment_form", "error");
     }
   };
 
