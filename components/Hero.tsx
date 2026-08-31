@@ -14,7 +14,7 @@ export default function Hero() {
       <div className="container-px mx-auto max-w-7xl relative pt-14 md:pt-20 pb-16 md:pb-24">
         <div className="flex flex-wrap items-center gap-2 mb-8 animate-rise">
           <span className="text-xs font-data text-violet bg-violet/10 border border-violet/25 rounded-full px-3 py-1">
-            Partner 2 · Omkar AI Innovation
+            Partner · Omkar AI Innovation
           </span>
           <span className="text-xs text-text-faint">Five Modules. One Complete Transformation.</span>
         </div>
@@ -55,7 +55,7 @@ export default function Hero() {
                 rel="noopener noreferrer"
                 className="text-sm text-text-dim hover:text-text underline decoration-line underline-offset-4 transition-colors"
               >
-                Explore on {brand.site}
+                Explore on  {brand.site}
               </a>
             </div>
 
