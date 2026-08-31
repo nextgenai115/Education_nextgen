@@ -6,7 +6,7 @@ import { trackOutboundLink } from "@/lib/ga4";
 
 export default function CTA() {
   const handleExploreClick = () => {
-    trackOutboundLink(brand.courseUrl, `Explore on ${brand.site}`);
+    trackOutboundLink(brand.courseUrl, "Explore our website");
   };
 
   return (
@@ -39,7 +39,7 @@ export default function CTA() {
             onClick={handleExploreClick}
             className="text-sm text-text-dim hover:text-text underline decoration-line underline-offset-4 transition-colors"
           >
-            Explore on {brand.site}
+            Explore our website
           </a>
         </div>
       </div>
