@@ -74,13 +74,13 @@ export default function EnrollmentForm() {
       <div className="container-px mx-auto max-w-7xl py-20 md:py-28 relative z-20">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-12">
-            <p className="text-sm md:text-base text-text-dim italic mb-4">
+            <p className="text-sm md:text-base font-semibold text-text-dim italic mb-4">
               &ldquo;Don&rsquo;t just witness the AI Revolution — Lead It.&rdquo;
             </p>
-            <h2 className="font-display font-semibold text-3xl md:text-5xl tracking-[-0.01em]">
+            <h2 className="font-display font-bold text-3xl md:text-5xl tracking-[-0.01em]">
               Claim Your 20% Discount Today
             </h2>
-            <p className="mt-4 text-text-dim max-w-xl mx-auto">
+            <p className="mt-4 text-text-dim font-medium max-w-xl mx-auto">
               Complete the form below to receive your exclusive promo code for 20% off our comprehensive AI program via email.
             </p>
           </div>
@@ -91,8 +91,8 @@ export default function EnrollmentForm() {
                 <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green/20 mb-4">
                   <CheckCircle className="w-8 h-8 text-green" />
                 </div>
-                <h3 className="font-display font-semibold text-2xl mb-2">Request Submitted Successfully!</h3>
-                <p className="text-text-dim mb-4">
+                <h3 className="font-display font-bold text-2xl mb-2">Request Submitted Successfully!</h3>
+                <p className="text-text-dim font-medium mb-4">
                   Your exclusive 20% discount promo code will be sent to your email address shortly.
                 </p>
                 <p className="text-sm text-violet">
@@ -103,7 +103,7 @@ export default function EnrollmentForm() {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-text mb-2">
+                    <label htmlFor="name" className="block text-sm font-bold text-text mb-2">
                       Full Name *
                     </label>
                     <input
@@ -119,7 +119,7 @@ export default function EnrollmentForm() {
                   </div>
                   
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-text mb-2">
+                    <label htmlFor="email" className="block text-sm font-bold text-text mb-2">
                       Email Address *
                     </label>
                     <input
@@ -136,7 +136,7 @@ export default function EnrollmentForm() {
                 </div>
 
                 <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-text mb-2">
+                  <label htmlFor="phone" className="block text-sm font-bold text-text mb-2">
                     Phone Number *
                   </label>
                   <input
@@ -175,7 +175,7 @@ export default function EnrollmentForm() {
                   )}
                 </button>
 
-                <p className="text-xs text-text-faint text-center">
+                <p className="text-xs font-medium text-text-dim text-center">
                   By submitting this form, you agree to our terms and privacy policy.
                 </p>
               </form>

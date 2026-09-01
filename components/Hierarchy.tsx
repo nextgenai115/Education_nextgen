@@ -32,10 +32,10 @@ export default function Hierarchy() {
               AI hierarchy
             </p>
           </div>
-          <h2 className="mt-4 font-display font-semibold text-3xl md:text-[2.5rem] leading-[1.1] tracking-[-0.01em]">
+          <h2 className="mt-4 font-display font-bold text-3xl md:text-[2.5rem] leading-[1.1] tracking-[-0.01em]">
             The AI evolution
           </h2>
-          <p className="mt-4 text-text-dim leading-relaxed">
+          <p className="mt-4 text-text-dim font-medium leading-relaxed">
             From plain artificial intelligence to fully agentic AI companies — you learn the
             whole ladder.
           </p>
@@ -57,17 +57,17 @@ export default function Hierarchy() {
               >
                 {/* Step number column */}
                 <div className="flex items-center justify-center w-16 shrink-0 bg-violet/5 border-r border-line group-hover:bg-violet/10 transition-colors duration-300">
-                  <span className="font-data text-sm font-bold text-violet/70 group-hover:text-violet transition-colors duration-300">
+                  <span className="font-data text-sm font-bold text-violet group-hover:text-violet transition-colors duration-300">
                     {String(h.step).padStart(2, "0")}
                   </span>
                 </div>
 
                 {/* Content */}
                 <div className="flex flex-col justify-center px-5 py-4 gap-0.5">
-                  <h3 className="font-display font-semibold text-base md:text-[1.05rem] text-text leading-snug">
+                  <h3 className="font-display font-bold text-base md:text-[1.05rem] text-text leading-snug">
                     {h.title}
                   </h3>
-                  <p className="text-sm text-text-dim leading-relaxed">
+                  <p className="text-sm font-medium text-text-dim leading-relaxed">
                     {h.desc}
                   </p>
                 </div>
