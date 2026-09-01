@@ -19,7 +19,7 @@ export default function Hero() {
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 h-[300px] w-[800px] rounded-full" style={{ background: "radial-gradient(ellipse, rgba(167,139,250,0.06) 0%, transparent 70%)" }} />
       </div>
 
-      <div className="container-px mx-auto max-w-7xl relative pt-16 md:pt-24 pb-20 md:pb-32 z-20">
+      <div className="container-px mx-auto max-w-7xl relative pt-[10px] mt-[20px] pb-20 md:pb-32 z-20">
         {/* Badge */}
         <div className="flex flex-col items-start gap-2 mb-10 animate-rise">
           <span
@@ -33,7 +33,7 @@ export default function Hero() {
             <Sparkles size={11} />
             NexGen AI Education Partner · Omkar AI Innovation
           </span>
-          <span className="text-xs font-semibold text-text-faint">Five Modules. One Complete Transformation.</span>
+          <span className="text-xs font-bold text-text-dim pl-2">  Five Modules. One Complete Transformation.</span>
         </div>
 
         <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-12 lg:gap-20 items-start">
@@ -83,7 +83,7 @@ export default function Hero() {
 
             {/* Stats */}
             <dl
-              className="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-x-6 gap-y-8 max-w-xl border-t pt-8 animate-rise"
+              className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-x-6 gap-y-8 max-w-xl border-t pt-8 animate-rise"
               style={{ borderColor: "rgba(255,255,255,0.08)", animationDelay: "320ms" }}
             >
               {heroStats.map((s) => (
@@ -96,7 +96,7 @@ export default function Hero() {
           </div>
 
           {/* Pricing card */}
-          <div className="animate-rise" style={{ animationDelay: "200ms" }}>
+          <div className="animate-rise self-start lg:-mt-[25px]" style={{ animationDelay: "200ms" }}>
             <div
               className="rounded-2xl p-6 md:p-8 relative overflow-hidden"
               style={{
@@ -112,25 +112,52 @@ export default function Hero() {
                 ✦ Limited time special offer
               </p>
 
-              <div className="mt-5">
-                <p className="text-xs font-semibold text-text-faint">Website price</p>
-                <p className="font-data text-lg font-bold text-text-faint line-through decoration-1 mt-0.5">
-                  ₹{pricing.websitePrice}/-
-                </p>
-              </div>
+              <div className="mt-5 flex items-end justify-between gap-4">
+                {/* Left: prices */}
+                <div>
+                  <div>
+                    <p className="text-xs font-bold text-text-dim">Website price</p>
+                    <p className="font-data text-lg font-bold text-text-dim line-through decoration-1 mt-0.5">
+                      ₹{pricing.websitePrice}/-
+                    </p>
+                  </div>
+                  <div className="mt-3">
+                    <p className="text-xs font-semibold text-text-dim">NexGenAI Automation price</p>
+                    <p className="font-display font-bold text-5xl text-white mt-1">
+                      ₹{pricing.partnerPrice}
+                      <span className="text-xl font-semibold text-text-dim">/-</span>
+                    </p>
+                  </div>
+                </div>
 
-              <div className="mt-3">
-                <p className="text-xs font-semibold text-text-dim">NexGenAI Automation price</p>
-                <p className="font-display font-bold text-5xl text-white mt-1">
-                  ₹{pricing.partnerPrice}
-                  <span className="text-xl font-semibold text-text-dim">/-</span>
-                </p>
+                {/* Right: promo code */}
+                <div
+                  className="flex flex-col items-center justify-center px-4 py-3 rounded-xl shrink-0"
+                  style={{
+                    background: "rgba(251,191,36,0.06)",
+                    border: "1px dashed rgba(251,191,36,0.35)",
+                    minWidth: "110px",
+                  }}
+                >
+                  <p className="text-[9px] font-data font-bold uppercase tracking-widest mb-1" style={{ color: "rgba(251,191,36,0.6)" }}>
+                    Promo Code
+                  </p>
+                  <p className="font-data font-bold text-base tracking-widest leading-tight" style={{ color: "#ffc564" }}>
+                    NEXTGEN032
+                  </p>
+                  <span
+                    className="mt-1.5 text-[10px] font-bold px-2 py-0.5 rounded-md"
+                    style={{ background: "rgba(251,191,36,0.15)", color: "#fbbf24", border: "1px solid rgba(251,191,36,0.25)" }}
+                  >
+                    20% OFF
+                  </span>
+                </div>
               </div>
 
               <a
                 id="enroll"
                 href="#enrollment-form"
-                className="mt-7 flex items-center justify-center gap-2 w-full font-bold text-sm rounded-xl py-3.5 transition-all duration-200 hover:scale-[1.02]"
+                className="mt-4 flex items-center justify-center gap-2 w-full font-bold text-sm rounded-xl py-3.5 transition-all duration-200 hover:scale-[1.02]"
                 style={{
                   background: "linear-gradient(135deg, #a78bfa, #60a5fa)",
                   color: "#fff",
@@ -140,14 +167,14 @@ export default function Hero() {
                 Enroll Now — Save 20%
               </a>
 
-              <p className="mt-4 text-[11px] font-medium leading-relaxed text-text-faint">
+              <p className="mt-4 text-[11px] font-semibold leading-relaxed text-text-dim">
                 *{pricing.note}
               </p>
 
               <div className="mt-6 pt-5 space-y-3" style={{ borderTop: "1px solid rgba(255,255,255,0.07)" }}>
                 {brand.registrations.map((r) => (
                   <div key={r.label} className="flex items-center justify-between gap-3 text-xs">
-                    <span className="font-medium text-text-faint">{r.label}</span>
+                    <span className="font-semibold text-text-dim">{r.label}</span>
                     <span
                       className="font-data font-bold shrink-0 px-2 py-0.5 rounded-md"
                       style={{ background: "rgba(167,139,250,0.1)", color: "#c4b5fd", border: "1px solid rgba(167,139,250,0.2)" }}

@@ -23,10 +23,10 @@ export default function Demo() {
   return (
     <section className="border-b border-white/[0.06] relative overflow-hidden">
       <div className="absolute inset-0 z-0">
-        <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover opacity-30">
+        <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover">
           <source src="/hero-video.mp4" type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-bg/85" />
+        <div className="absolute inset-0 bg-bg/75" />
       </div>
 
       <div className="pointer-events-none absolute inset-0 z-10">
