@@ -4,17 +4,32 @@ import { ArrowUpRight } from "lucide-react";
 export default function Hero() {
   return (
     <section id="top" className="relative overflow-hidden border-b border-line">
+      {/* Video background */}
+      <div className="absolute inset-0 z-0">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/hero-video.mp4" type="video/mp4" />
+        </video>
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 bg-bg/80 backdrop-blur-sm" />
+      </div>
+
       {/* backdrop */}
-      <div className="pointer-events-none absolute inset-0">
+      <div className="pointer-events-none absolute inset-0 z-10">
         <div className="absolute -top-40 right-[-10%] h-[520px] w-[520px] rounded-full bg-violet/10 blur-[120px]" />
         <div className="absolute top-40 left-[-10%] h-[420px] w-[420px] rounded-full bg-amber/[0.06] blur-[110px]" />
         <div className="absolute inset-0 grid-line opacity-[0.03]" />
       </div>
 
-      <div className="container-px mx-auto max-w-7xl relative pt-14 md:pt-20 pb-16 md:pb-24">
+      <div className="container-px mx-auto max-w-7xl relative pt-14 md:pt-20 pb-16 md:pb-24 z-20">
         <div className="flex flex-wrap items-center gap-2 mb-8 animate-rise">
           <span className="text-xs font-data text-violet bg-violet/10 border border-violet/25 rounded-full px-3 py-1">
-            Partner · Omkar AI Innovation
+             NexGen AI Automonmtio Education Partner · Omkar AI Innovation
           </span>
           <span className="text-xs text-text-faint">Five Modules. One Complete Transformation.</span>
         </div>
@@ -90,7 +105,7 @@ export default function Hero() {
               </div>
 
               <div className="mt-1">
-                <p className="text-xs text-text-faint">Earnify Empire price</p>
+                <p className="text-xs text-text-faint">NexGenAI Automation price</p>
                 <p className="font-display font-semibold text-5xl text-text mt-1">
                   ₹{pricing.partnerPrice}
                   <span className="text-lg text-text-faint">/-</span>
@@ -102,7 +117,7 @@ export default function Hero() {
                 href="#enrollment-form"
                 className="mt-6 flex items-center justify-center gap-2 w-full bg-text text-bg font-medium text-sm rounded-xl py-3 hover:bg-violet transition-colors"
               >
-                Get Promo Code
+                Enroll Now
               </a>
 
               <p className="mt-4 text-[11px] leading-relaxed text-text-faint">

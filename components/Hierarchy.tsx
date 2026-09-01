@@ -2,16 +2,31 @@ import { hierarchy } from "@/lib/content";
 
 export default function Hierarchy() {
   return (
-    <section className="border-b border-line bg-bg-raised relative overflow-hidden">
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute top-1/4 right-0 h-[400px] w-[400px] bg-violet/[0.03] blur-[120px] rounded-full" />
-        <div className="absolute bottom-1/4 left-0 h-[300px] w-[300px] bg-amber/[0.02] blur-[100px] rounded-full" />
+    <section className="border-b border-line relative overflow-hidden">
+      {/* Background image */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src="/Gemini_Generated_Image_4asix04asix04asi.png"
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 bg-bg/90 backdrop-blur-sm" />
       </div>
-      
-      <div className="container-px mx-auto max-w-7xl py-10 md:py-14 relative">
-        <div className="text-center max-w-3xl mx-auto mb-8">
+
+      {/* Ambient glow effects */}
+      <div className="pointer-events-none absolute inset-0 z-10">
+        <div className="absolute top-1/4 right-0 h-[500px] w-[500px] bg-violet/[0.04] blur-[140px] rounded-full" />
+        <div className="absolute bottom-1/4 left-0 h-[350px] w-[350px] bg-amber/[0.03] blur-[120px] rounded-full" />
+      </div>
+
+      <div className="container-px mx-auto max-w-7xl py-12 md:py-20 relative z-20">
+        {/* Header */}
+        <div className="text-center max-w-3xl mx-auto mb-12">
           <div className="inline-block">
-            <p className="text-xs font-data text-violet font-semibold tracking-wide uppercase px-4 py-2 bg-violet/10 border border-violet/30 rounded-[15px]">AI hierarchy</p>
+            <p className="text-xs font-data text-violet font-semibold tracking-wide uppercase px-4 py-2 bg-violet/10 border border-violet/30 rounded-[15px]">
+              AI hierarchy
+            </p>
           </div>
           <h2 className="mt-4 font-display font-semibold text-3xl md:text-[2.5rem] leading-[1.1] tracking-[-0.01em]">
             The AI evolution
@@ -22,40 +37,57 @@ export default function Hierarchy() {
           </p>
         </div>
 
-        <div className="max-w-4xl mx-auto">
-          <div className="grid gap-3">
+        {/* Two-column layout */}
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
+
+          {/* Left: Hierarchy steps */}
+          <div className="flex flex-col gap-2.5">
             {hierarchy.map((h, i) => (
               <div
                 key={h.step}
-                className="relative overflow-hidden rounded-lg border border-line p-4 md:p-5 transition-all hover:scale-[1.01] hover:shadow-xl hover:shadow-violet/5"
+                className="group relative flex items-stretch gap-0 rounded-xl border border-line overflow-hidden transition-all duration-300 hover:border-violet/40 hover:shadow-lg hover:shadow-violet/5"
                 style={{
-                  background: `linear-gradient(135deg, 
-                    rgba(238, 238, 238, 0.03) 0%, 
-                    rgba(15, 20, 31, 0.6) 50%, 
-                    rgba(13, 17, 23, 0.8) 100%)`
+                  background:
+                    "linear-gradient(120deg, rgba(15,20,31,0.9) 0%, rgba(13,17,23,0.95) 100%)",
                 }}
               >
-                <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-8">
-                  <div className="flex items-center gap-4 md:gap-6 flex-shrink-0">
-                    <div className="flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-lg border border-violet/30 bg-violet/5">
-                      <span className="font-data text-lg md:text-xl text-violet">
-                        {String(h.step).padStart(2, "0")}
-                      </span>
-                    </div>
-                    <div>
-                      <h3 className="font-display font-semibold text-base md:text-lg text-text">
-                        {h.title}
-                      </h3>
-                    </div>
-                  </div>
-                  <div className="flex-1">
-                    <p className="text-sm md:text-base text-text-dim leading-relaxed">
-                      {h.desc}
-                    </p>
-                  </div>
+                {/* Step number column */}
+                <div className="flex items-center justify-center w-16 shrink-0 bg-violet/5 border-r border-line group-hover:bg-violet/10 transition-colors duration-300">
+                  <span className="font-data text-sm font-bold text-violet/70 group-hover:text-violet transition-colors duration-300">
+                    {String(h.step).padStart(2, "0")}
+                  </span>
                 </div>
+
+                {/* Content */}
+                <div className="flex flex-col justify-center px-5 py-4 gap-0.5">
+                  <h3 className="font-display font-semibold text-base md:text-[1.05rem] text-text leading-snug">
+                    {h.title}
+                  </h3>
+                  <p className="text-sm text-text-dim leading-relaxed">
+                    {h.desc}
+                  </p>
+                </div>
+
+                {/* Accent bar on left edge */}
+                <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-gradient-to-b from-violet/0 via-violet/50 to-violet/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </div>
             ))}
+          </div>
+
+          {/* Right: SVG illustration */}
+          <div className="lg:sticky lg:top-24 flex items-center justify-center">
+            <div className="relative w-full max-w-lg mb-[14px]">
+              {/* Glow behind SVG */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="w-3/4 h-3/4 bg-violet/15 blur-[100px] rounded-full" />
+              </div>
+
+              <img
+                src="/ai-hierarchy-dark.svg"
+                alt="AI Hierarchy Diagram"
+                className="relative w-full h-auto drop-shadow-2xl rounded-[15px]"
+              />
+            </div>
           </div>
         </div>
       </div>

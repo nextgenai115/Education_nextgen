@@ -19,7 +19,7 @@ export const brand = {
 
 export const pricing = {
   websitePrice: "4,999",
-  partnerPrice: "2,999",
+  partnerPrice: "3,999",
   note: "Exclusive pricing available only through Earnify Empire partnership.",
 };
 

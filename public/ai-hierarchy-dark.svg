@@ -1,0 +1,79 @@
+<svg width="820" height="960" viewBox="0 0 820 960" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="AI hierarchy staircase, dark theme">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M2 1L8 5L2 9" fill="none" stroke="#ffb454" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <filter id="blurLg" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="70"/>
+    </filter>
+    <filter id="blurMd" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="40"/>
+    </filter>
+    <linearGradient id="barViolet" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7c8cff" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#7c8cff" stop-opacity="0.08"/>
+    </linearGradient>
+  </defs>
+
+  <!-- background -->
+  <rect x="0" y="0" width="820" height="960" fill="#0a0e16"/>
+
+  <!-- ambient glow blobs -->
+  <circle cx="660" cy="150" r="230" fill="#7c8cff" opacity="0.16" filter="url(#blurLg)"/>
+  <circle cx="110" cy="860" r="200" fill="#ffb454" opacity="0.07" filter="url(#blurLg)"/>
+  <circle cx="736" cy="70" r="150" fill="#ffb454" opacity="0.10" filter="url(#blurMd)"/>
+
+  <!-- faint grid texture -->
+  <g opacity="0.035">
+    <line x1="0" y1="240" x2="820" y2="240" stroke="#eef1f6" stroke-width="1"/>
+    <line x1="0" y1="480" x2="820" y2="480" stroke="#eef1f6" stroke-width="1"/>
+    <line x1="0" y1="720" x2="820" y2="720" stroke="#eef1f6" stroke-width="1"/>
+  </g>
+
+  <!-- baseline -->
+  <line x1="90" y1="760" x2="760" y2="760" stroke="#212a38" stroke-width="1"/>
+
+  <!-- ascent trajectory -->
+  <path d="M147,654 L239,559 L331,464 L423,369 L515,274 L607,179 L699,84 L730,64"
+        fill="none" stroke="#ffb454" stroke-width="1.4" stroke-dasharray="5 6"
+        opacity="0.55" marker-end="url(#arrow)"/>
+
+  <!-- steps 01-04 : foundational (gray/panel) -->
+  <g font-family="Manrope, Inter, sans-serif">
+    <g>
+      <rect x="110" y="670" width="74" height="90" rx="10" fill="#131a26" stroke="#2a3446" stroke-width="1"/>
+      <text x="147" y="700" text-anchor="middle" font-size="22" font-weight="600" fill="#96a0b2">01</text>
+    </g>
+    <g>
+      <rect x="202" y="575" width="74" height="185" rx="10" fill="#131a26" stroke="#2a3446" stroke-width="1"/>
+      <text x="239" y="605" text-anchor="middle" font-size="22" font-weight="600" fill="#96a0b2">02</text>
+    </g>
+    <g>
+      <rect x="294" y="480" width="74" height="280" rx="10" fill="#131a26" stroke="#2a3446" stroke-width="1"/>
+      <text x="331" y="510" text-anchor="middle" font-size="22" font-weight="600" fill="#96a0b2">03</text>
+    </g>
+    <g>
+      <rect x="386" y="385" width="74" height="375" rx="10" fill="#131a26" stroke="#2a3446" stroke-width="1"/>
+      <text x="423" y="415" text-anchor="middle" font-size="22" font-weight="600" fill="#96a0b2">04</text>
+    </g>
+
+    <!-- steps 05-07 : generative / agentic (violet) -->
+    <g>
+      <rect x="478" y="290" width="74" height="470" rx="10" fill="url(#barViolet)" stroke="#7c8cff" stroke-width="1.2"/>
+      <text x="515" y="320" text-anchor="middle" font-size="22" font-weight="600" fill="#c7cdff">05</text>
+    </g>
+    <g>
+      <rect x="570" y="195" width="74" height="565" rx="10" fill="url(#barViolet)" stroke="#7c8cff" stroke-width="1.2"/>
+      <text x="607" y="225" text-anchor="middle" font-size="22" font-weight="600" fill="#c7cdff">06</text>
+    </g>
+    <g>
+      <rect x="662" y="100" width="74" height="660" rx="10" fill="url(#barViolet)" stroke="#7c8cff" stroke-width="1.4"/>
+      <text x="699" y="130" text-anchor="middle" font-size="22" font-weight="600" fill="#e4e7ff">07</text>
+    </g>
+  </g>
+
+  <!-- summit glow -->
+  <circle cx="736" cy="62" r="34" fill="#ffb454" opacity="0.18"/>
+  <circle cx="736" cy="62" r="21" fill="#ffb454" opacity="0.38"/>
+  <circle cx="736" cy="62" r="9" fill="#ffb454" opacity="0.95"/>
+</svg>
