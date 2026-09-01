@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Send, CheckCircle, Loader2 } from "lucide-react";
 import { trackFormSubmission } from "@/lib/ga4";
+import { brand } from "@/lib/content";
 
 export default function EnrollmentForm() {
   const [formData, setFormData] = useState({
@@ -32,6 +33,11 @@ export default function EnrollmentForm() {
       setStatus("success");
       setFormData({ name: "", email: "", phone: "" });
       trackFormSubmission("enrollment_form", "success");
+
+      // Redirect to course page after 3 seconds
+      setTimeout(() => {
+        window.location.href = brand.courseUrl;
+      }, 3000);
     } catch (error) {
       setStatus("error");
       setErrorMessage("Something went wrong. Please try again.");
@@ -45,11 +51,27 @@ export default function EnrollmentForm() {
 
   return (
     <section id="enrollment-form" className="border-b border-line relative overflow-hidden">
-      <div className="pointer-events-none absolute inset-0">
+      {/* Video background */}
+      <div className="absolute inset-0 z-0">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover opacity-40"
+        >
+          <source src="/hero-video.mp4" type="video/mp4" />
+        </video>
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 bg-bg/80 backdrop-blur-sm" />
+      </div>
+
+      {/* Ambient glow effects */}
+      <div className="pointer-events-none absolute inset-0 z-10">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[420px] w-[720px] bg-violet/[0.08] blur-[140px] rounded-full" />
       </div>
-      
-      <div className="container-px mx-auto max-w-7xl py-20 md:py-28 relative">
+
+      <div className="container-px mx-auto max-w-7xl py-20 md:py-28 relative z-20">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-12">
             <p className="text-sm md:text-base text-text-dim italic mb-4">
@@ -70,15 +92,12 @@ export default function EnrollmentForm() {
                   <CheckCircle className="w-8 h-8 text-green" />
                 </div>
                 <h3 className="font-display font-semibold text-2xl mb-2">Request Submitted Successfully!</h3>
-                <p className="text-text-dim">
+                <p className="text-text-dim mb-4">
                   Your exclusive 20% discount promo code will be sent to your email address shortly.
                 </p>
-                <button
-                  onClick={() => setStatus("idle")}
-                  className="mt-6 text-sm text-violet hover:text-[#d0d0d0] transition-colors"
-                >
-                  Submit another request
-                </button>
+                <p className="text-sm text-violet">
+                  Redirecting to course page...
+                </p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">

@@ -3,15 +3,19 @@ import { hierarchy } from "@/lib/content";
 export default function Hierarchy() {
   return (
     <section className="border-b border-line relative overflow-hidden">
-      {/* Background image */}
+      {/* Video background */}
       <div className="absolute inset-0 z-0">
-        <img
-          src="/Gemini_Generated_Image_4asix04asix04asi.png"
-          alt=""
-          className="absolute inset-0 w-full h-full object-cover"
-        />
-        {/* Dark overlay for text readability */}
-        <div className="absolute inset-0 bg-bg/90 backdrop-blur-sm" />
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover opacity-40"
+        >
+          <source src="/hero-video.mp4" type="video/mp4" />
+        </video>
+        {/* Dark overlay to ensure text readability */}
+        <div className="absolute inset-0 bg-bg/80 backdrop-blur-sm" />
       </div>
 
       {/* Ambient glow effects */}
@@ -38,11 +42,11 @@ export default function Hierarchy() {
         </div>
 
         {/* Two-column layout */}
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
 
           {/* Left: Hierarchy steps */}
           <div className="flex flex-col gap-2.5">
-            {hierarchy.map((h, i) => (
+            {hierarchy.map((h) => (
               <div
                 key={h.step}
                 className="group relative flex items-stretch gap-0 rounded-xl border border-line overflow-hidden transition-all duration-300 hover:border-violet/40 hover:shadow-lg hover:shadow-violet/5"
@@ -74,18 +78,17 @@ export default function Hierarchy() {
             ))}
           </div>
 
-          {/* Right: SVG illustration */}
-          <div className="lg:sticky lg:top-24 flex items-center justify-center">
-            <div className="relative w-full max-w-lg mb-[14px]">
-              {/* Glow behind SVG */}
-              <div className="absolute inset-0 flex items-center justify-center">
+          {/* Right: Image — centered against the full height of the left column */}
+          <div className="flex items-center justify-center w-full">
+            <div className="relative w-full max-w-[420px] mx-auto">
+              {/* Glow */}
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                 <div className="w-3/4 h-3/4 bg-violet/15 blur-[100px] rounded-full" />
               </div>
-
               <img
                 src="/ai-hierarchy-dark.svg"
-                alt="AI Hierarchy Diagram"
-                className="relative w-full h-auto drop-shadow-2xl rounded-[15px]"
+                alt="AI Hierarchy Visualization"
+                className="relative w-full h-auto object-contain drop-shadow-2xl rounded-[15px]"
               />
             </div>
           </div>

@@ -12,8 +12,23 @@ const icons = [Users, Rocket, Network, BadgeCheck, TrendingUp, Globe2];
 
 export default function WhyUs() {
   return (
-    <section className="border-b border-line bg-bg-raised">
-      <div className="container-px mx-auto max-w-7xl py-16 md:py-24">
+    <section className="border-b border-line relative overflow-hidden">
+      {/* Video background */}
+      <div className="absolute inset-0 z-0">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        >
+          <source src="/hero-video.mp4" type="video/mp4" />
+        </video>
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 bg-bg/90 backdrop-blur-sm" />
+      </div>
+
+      <div className="container-px mx-auto max-w-7xl py-16 md:py-24 relative z-20">
         <div className="text-center max-w-3xl mx-auto">
           <div className="inline-block">
             <p className="text-xs font-data text-violet font-semibold tracking-wide uppercase px-4 py-2 bg-violet/10 border border-violet/30 rounded-[15px]">Why us</p>
