@@ -1,62 +1,13 @@
 import { hierarchy } from "@/lib/content";
 // Each step gets progressively richer styling to show the hierarchy
 const stepStyles = [
-  {
-    color: "#94a3b8",
-    bg: "rgba(148,163,184,0.06)",
-    border: "rgba(148,163,184,0.15)",
-    glow: "rgba(148,163,184,0.03)",
-    label: "Foundation",
-    indent: "mr-0 sm:mr-24",
-  },
-  {
-    color: "#7dd3fc",
-    bg: "rgba(125,211,252,0.07)",
-    border: "rgba(125,211,252,0.18)",
-    glow: "rgba(125,211,252,0.04)",
-    label: "Learning",
-    indent: "mr-0 sm:mr-20",
-  },
-  {
-    color: "#60a5fa",
-    bg: "rgba(96,165,250,0.08)",
-    border: "rgba(96,165,250,0.22)",
-    glow: "rgba(96,165,250,0.05)",
-    label: "Architecture",
-    indent: "mr-0 sm:mr-16",
-  },
-  {
-    color: "#818cf8",
-    bg: "rgba(129,140,248,0.09)",
-    border: "rgba(129,140,248,0.25)",
-    glow: "rgba(129,140,248,0.06)",
-    label: "Advanced",
-    indent: "mr-0 sm:mr-12",
-  },
-  {
-    color: "#a78bfa",
-    bg: "rgba(167,139,250,0.1)",
-    border: "rgba(167,139,250,0.3)",
-    glow: "rgba(167,139,250,0.07)",
-    label: "Generative",
-    indent: "mr-0 sm:mr-8",
-  },
-  {
-    color: "#c084fc",
-    bg: "rgba(192,132,252,0.12)",
-    border: "rgba(192,132,252,0.35)",
-    glow: "rgba(192,132,252,0.08)",
-    label: "Autonomous",
-    indent: "mr-0 sm:mr-4",
-  },
-  {
-    color: "#e879f9",
-    bg: "rgba(232,121,249,0.14)",
-    border: "rgba(232,121,249,0.4)",
-    glow: "rgba(232,121,249,0.1)",
-    label: "Peak",
-    indent: "mr-0",
-  },
+  { color: "#94a3b8", bg: "#1a1f2e", border: "#2a3244", glow: "#1a1f2e", label: "Foundation",  indent: "mr-0 sm:mr-24" },
+  { color: "#7dd3fc", bg: "#0f1e2e", border: "#1a3448", glow: "#0f1e2e", label: "Learning",     indent: "mr-0 sm:mr-20" },
+  { color: "#60a5fa", bg: "#0e1a2e", border: "#1a2e48", glow: "#0e1a2e", label: "Architecture", indent: "mr-0 sm:mr-16" },
+  { color: "#818cf8", bg: "#12112e", border: "#201f48", glow: "#12112e", label: "Advanced",     indent: "mr-0 sm:mr-12" },
+  { color: "#a78bfa", bg: "#160e30", border: "#2a1a50", glow: "#160e30", label: "Generative",   indent: "mr-0 sm:mr-8"  },
+  { color: "#c084fc", bg: "#1a0e34", border: "#301a55", glow: "#1a0e34", label: "Autonomous",   indent: "mr-0 sm:mr-4"  },
+  { color: "#e879f9", bg: "#1e0a38", border: "#3a1258", glow: "#1e0a38", label: "Peak",          indent: "mr-0"          },
 ];
 export default function Hierarchy() {
   return (
@@ -123,9 +74,9 @@ export default function Hierarchy() {
                   key={h.step}
                   className={`group relative flex items-stretch rounded-xl overflow-hidden transition-all duration-300 hover:-translate-y-0.5 ${s.indent}`}
                   style={{
-                    background: `linear-gradient(120deg, ${s.bg} 0%, rgba(13,17,23,0.95) 100%)`,
+                    background: s.bg,
                     border: `1px solid ${s.border}`,
-                    boxShadow: `0 2px 20px ${s.glow}`,
+                    boxShadow: `0 2px 16px rgba(0,0,0,0.4)`,
                   }}
                 >
                   {/* Left accent bar */}

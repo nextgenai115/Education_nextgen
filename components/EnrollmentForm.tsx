@@ -145,7 +145,7 @@ export default function EnrollmentForm() {
                   ) : (
                     <>
                       <Send className="w-4 h-4" />
-                      Request Promo Code
+                      Enroll Now
                     </>
                   )}
                 </button>

@@ -19,7 +19,7 @@ export default function Hero() {
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 h-[300px] w-[800px] rounded-full" style={{ background: "radial-gradient(ellipse, rgba(167,139,250,0.06) 0%, transparent 70%)" }} />
       </div>
 
-      <div className="container-px mx-auto max-w-7xl relative pt-[10px] mt-[20px] pb-20 md:pb-32 z-20">
+      <div className="container-px mx-auto max-w-7xl relative pt-[10px] mt-[1px] pb-20 md:pb-32 z-20">
         {/* Badge */}
         <div className="flex flex-col items-start gap-2 mb-10 animate-rise">
           <span
@@ -58,9 +58,9 @@ export default function Hero() {
               className="font-display font-bold text-[2.8rem] leading-[1.04] sm:text-6xl lg:text-[4.5rem] tracking-[-0.03em] animate-rise"
               style={{ animationDelay: "80ms" }}
             >
-              <span className="text-white">Get 20% Off</span>
-              <br />
               <span className="gradient-text">Master the AI Revolution</span>
+              <br />
+              <span className="text-white">Get 20% Off</span>
             </h1>
 
             <p
