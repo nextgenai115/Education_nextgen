@@ -45,7 +45,7 @@ export default function EnrollmentForm() {
       {/* Video background */}
       <div className="absolute inset-0 z-0">
         <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover">
-          <source src="/enrollment.mp4" type="video/mp4" />
+          <source src="/enrol.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-bg/75" />
       </div>
