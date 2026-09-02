@@ -7,13 +7,6 @@ import { Menu, X, ChevronDown } from "lucide-react";
 
 const navLinks = [
   { label: "Home", href: "/" },
-  { label: "Services", href: "/services" },
-  { label: "Case Studies", href: "/case-studies" },
-  { label: "Pricing", href: "/pricing" },
-  { label: "About", href: "/about" },
-  { label: "Portfolio", href: "/portfolio" },
-  { label: "Contact", href: "/contact" },
-  { label: "Blog", href: "https://blog.nextgenaiautomation.net" },
 ];
 
 const partners = [
@@ -45,23 +38,26 @@ export default function Nav() {
     <header className="sticky top-0 z-50 w-full bg-gradient-to-r from-[#050915] via-[#0d1a4a] to-[#1652d6]">
       <div className="mx-auto flex max-w-[1600px] items-center justify-between gap-8 px-8 py-3.5">
 
-        {/* Logo */}
-        <Link href="/" className="flex shrink-0 items-center gap-3">
-          <div className="flex h-[60px] w-[60px] items-center justify-center rounded-xl border border-sky-400/30 bg-gradient-to-b from-sky-50 to-sky-100 shadow-md overflow-hidden">
-            <img
-              src="/nextgen-ai-logo.37c8a695.png"
-              alt="NextGen AI Automation logo"
-              className="h-11 w-11 object-contain"
-            />
-          </div>
-          <div className="leading-tight">
-            <div className="text-xl font-bold text-white">NextGen</div>
-            <div className="-mt-1 text-sm font-semibold text-sky-400">AI Automation</div>
-          </div>
-        </Link>
+        {/* Logo + Home on left */}
+        <div className="flex items-center gap-6 shrink-0 ml-[140px]">
+          <Link href="/" className="flex shrink-0 items-center gap-3">
+            <div className="flex h-[60px] w-[60px] items-center justify-center rounded-xl border border-sky-400/30 bg-gradient-to-b from-sky-50 to-sky-100 shadow-md overflow-hidden">
+              <img
+                src="/nextgen-ai-logo.37c8a695.png"
+                alt="NextGen AI Automation logo"
+                className="h-11 w-11 object-contain"
+              />
+            </div>
+            <div className="leading-tight">
+              <div className="text-xl font-bold text-white">NextGen</div>
+              <div className="-mt-1 text-sm font-semibold text-sky-400">AI Automation</div>
+            </div>
+          </Link>
+        </div>
 
-        {/* Desktop Nav */}
-        <nav className="hidden items-center gap-2 xl:flex">
+        {/* CTA + Education Partners + Home — all on right */}
+        <div className="hidden shrink-0 xl:flex items-center gap-3">
+          {/* Home link */}
           {navLinks.map((link) => {
             const isActive = pathname === link.href;
             return (
@@ -79,7 +75,6 @@ export default function Nav() {
               </Link>
             );
           })}
-
           {/* Education Partners dropdown */}
           <div className="relative" ref={dropdownRef}>
             <button
@@ -101,26 +96,18 @@ export default function Nav() {
               />
             </button>
 
-            {/* Dropdown panel */}
             {partnerOpen && (
               <div
-                className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-72 rounded-2xl overflow-hidden z-50"
+                className="absolute top-full right-0 mt-3 w-72 rounded-2xl overflow-hidden z-50"
                 style={{
                   background: "linear-gradient(135deg, rgba(13,26,74,0.98) 0%, rgba(5,9,21,0.99) 100%)",
                   border: "1px solid rgba(96,165,250,0.25)",
                   boxShadow: "0 16px 48px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.04)",
                 }}
               >
-                {/* Arrow */}
-                <div
-                  className="absolute -top-2 left-1/2 -translate-x-1/2 w-4 h-4 rotate-45"
-                  style={{ background: "rgba(13,26,74,0.98)", border: "1px solid rgba(96,165,250,0.25)", borderBottom: "none", borderRight: "none" }}
-                />
-
                 <div className="p-3">
                   {partners.map((p) => (
                     <div key={p.name}>
-                      {/* Partner header */}
                       <a
                         href="#top"
                         onClick={() => setPartnerOpen(false)}
@@ -141,10 +128,7 @@ export default function Nav() {
               </div>
             )}
           </div>
-        </nav>
 
-        {/* CTA */}
-        <div className="hidden shrink-0 xl:block">
           <Link
             href="/contact"
             className="rounded-full bg-gradient-to-r from-sky-500 to-blue-500 px-7 py-3 text-[15px] font-bold text-white shadow-md transition-transform hover:scale-105"

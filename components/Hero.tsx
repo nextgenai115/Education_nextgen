@@ -23,15 +23,31 @@ export default function Hero() {
         {/* Badge */}
         <div className="flex flex-col items-start gap-2 mb-10 animate-rise">
           <span
-            className="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full border"
+            className="inline-flex items-center gap-2 text-sm font-bold px-5 py-2.5 rounded-full border"
             style={{
-              background: "rgba(167,139,250,0.1)",
-              borderColor: "rgba(167,139,250,0.3)",
-              color: "#c4b5fd",
+              background: "linear-gradient(135deg, rgba(167,139,250,0.15) 0%, rgba(96,165,250,0.1) 100%)",
+              borderColor: "rgba(167,139,250,0.4)",
+              boxShadow: "0 0 20px rgba(167,139,250,0.1)",
             }}
           >
-            <Sparkles size={11} />
-            NexGen AI Education Partner · Omkar AI Innovation
+            <Sparkles size={13} style={{ color: "#a78bfa" }} />
+            <span style={{
+              background: "linear-gradient(90deg, #c4b5fd 0%, #93c5fd 50%, #a78bfa 100%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
+            }}>
+              NexGen AI Education Partner
+            </span>
+            <span style={{ color: "rgba(255,255,255,0.3)" }}>·</span>
+            <span style={{
+              background: "linear-gradient(90deg, #fbbf24 0%, #f472b6 100%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
+            }}>
+              Omkar AI Innovation
+            </span>
           </span>
           <span className="text-xs font-bold text-text-dim pl-2">  Five Modules. One Complete Transformation.</span>
         </div>
