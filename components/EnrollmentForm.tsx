@@ -41,13 +41,13 @@ export default function EnrollmentForm() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
   return (
-    <section id="enrollment-form" className="border-b border-line relative overflow-hidden">
+    <section id="enrollment-form" className="border-b border-line relative overflow-hidden" style={{ background: "transparent" }}>
       {/* Video background */}
       <div className="absolute inset-0 z-0">
         <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover">
           <source src="/enrol.mp4" type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-bg/75" />
+        <div className="absolute inset-0" style={{ background: "rgba(5,8,12,0.55)" }} />
       </div>
       {/* Ambient glow effects */}
       <div className="pointer-events-none absolute inset-0 z-10">

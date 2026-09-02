@@ -30,7 +30,7 @@ export default function Certification() {
           <div className="inline-block">
             <div
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border"
-              style={{ background: "rgba(255,197,100,0.1)", borderColor: "rgba(255,197,100,0.35)" }}
+              style={{ background: "linear-gradient(135deg, #1a1000 0%, #2a1a00 50%, #1a1000 100%)", borderColor: "rgba(255,197,100,0.5)", boxShadow: "0 0 20px rgba(255,197,100,0.15), inset 0 1px 0 rgba(255,197,100,0.1)" }}
             >
               <span className="material-symbols-rounded select-none" style={{ color: "#ffc564", fontSize: "16px" }}>auto_awesome</span>
               <span className="text-sm font-data font-bold tracking-widest uppercase" style={{ color: "#ffc564" }}>Completion &amp; certification</span>

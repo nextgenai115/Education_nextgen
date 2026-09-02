@@ -11,7 +11,7 @@ const stepStyles = [
 ];
 export default function Hierarchy() {
   return (
-    <section className="border-b border-white/[0.06] relative overflow-hidden">
+    <section id="hierarchy" className="border-b border-white/[0.06] relative overflow-hidden">
       {/* Video background */}
       <div className="absolute inset-0 z-0">
         <video
@@ -36,15 +36,16 @@ export default function Hierarchy() {
           style={{ background: "radial-gradient(circle, rgba(96,165,250,0.06) 0%, transparent 70%)" }}
         />
       </div>
-      <div className="container-px mx-auto max-w-7xl py-12 md:py-20 lg:py-24 relative z-20">
+      <div className="container-px mx-auto max-w-7xl pt-[50px] pb-12 md:pb-20 lg:pb-24 relative z-20">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-10 md:mb-14">
           <div className="inline-block">
             <div
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border"
               style={{
-                background: "rgba(255,197,100,0.1)",
-                borderColor: "rgba(255,197,100,0.35)",
+                background: "linear-gradient(135deg, #1a1000 0%, #2a1a00 50%, #1a1000 100%)",
+                borderColor: "rgba(255,197,100,0.5)",
+                boxShadow: "0 0 20px rgba(255,197,100,0.15), inset 0 1px 0 rgba(255,197,100,0.1)",
               }}
             >
               <span className="material-symbols-rounded select-none" style={{ color: "#ffc564", fontSize: "16px" }}>auto_awesome</span>
@@ -56,7 +57,7 @@ export default function Hierarchy() {
           </div>
           <h2 className="mt-5 font-display font-bold text-3xl md:text-[2.5rem] leading-[1.1] tracking-[-0.02em]">
             The{" "}
-            <span className="gradient-text">AI evolution</span>
+            <span className="gradient-text">AI Evolution</span>
           </h2>
           <p className="mt-4 text-text-dim font-medium leading-relaxed text-sm md:text-base">
             From plain artificial intelligence to fully agentic AI companies — you learn the
@@ -126,16 +127,22 @@ export default function Hierarchy() {
             </p>
           </div>
           {/* Right: image — hidden on mobile, shown lg+ */}
-          <div className="hidden lg:flex items-center justify-center w-full">
-            <div className="relative w-full max-w-[420px] mx-auto">
+          <div className="hidden lg:flex items-start justify-center w-full">
+            <div className="relative w-full max-w-[500px] mx-auto">
+              {/* Glow behind image */}
+              <div
+                className="absolute -inset-3 rounded-[24px] pointer-events-none"
+                style={{ background: "radial-gradient(ellipse at center, rgba(167,139,250,0.12) 0%, transparent 70%)", filter: "blur(16px)" }}
+              />
               <img
                 src="/ai-hierarchy-dark.svg"
                 alt="AI Hierarchy Visualization"
-                className="w-full h-auto object-contain"
+                className="relative w-full h-auto object-contain"
                 style={{
-                  borderRadius: "15px",
-                  boxShadow: "0 4px 32px rgba(167,139,250,0.15), 0 1px 4px rgba(0,0,0,0.5)",
-                  maxHeight: "480px",
+                  borderRadius: "18px",
+                  boxShadow: "0 8px 48px rgba(167,139,250,0.2), 0 2px 8px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.04)",
+                  minHeight: "520px",
+                  maxHeight: "640px",
                 }}
               />
             </div>
