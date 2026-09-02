@@ -1,10 +1,8 @@
 "use client";
-
 import { useState } from "react";
 import { Send, CheckCircle, Loader2 } from "lucide-react";
 import { trackFormSubmission } from "@/lib/ga4";
 import { brand } from "@/lib/content";
-
 export default function EnrollmentForm() {
   const [formData, setFormData] = useState({
     name: "",
@@ -13,27 +11,22 @@ export default function EnrollmentForm() {
   });
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("loading");
     setErrorMessage("");
-
     try {
       const response = await fetch("/api/enroll", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
-
       if (!response.ok) {
         throw new Error("Failed to submit enrollment");
       }
-
       setStatus("success");
       setFormData({ name: "", email: "", phone: "" });
       trackFormSubmission("enrollment_form", "success");
-
       // Redirect to payment page after 3 seconds
       setTimeout(() => {
         window.location.href = "https://pages.razorpay.com/pl_SDFYHtGJCRWHoN/view";
@@ -44,26 +37,22 @@ export default function EnrollmentForm() {
       trackFormSubmission("enrollment_form", "error");
     }
   };
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-
   return (
     <section id="enrollment-form" className="border-b border-line relative overflow-hidden">
       {/* Video background */}
       <div className="absolute inset-0 z-0">
         <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover">
-          <source src="/hero-video.mp4" type="video/mp4" />
+          <source src="/enrollment.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-bg/75" />
       </div>
-
       {/* Ambient glow effects */}
       <div className="pointer-events-none absolute inset-0 z-10">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[420px] w-[720px] bg-violet/[0.08] blur-[140px] rounded-full" />
       </div>
-
       <div className="container-px mx-auto max-w-7xl py-20 md:py-28 relative z-20">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-12">
@@ -77,7 +66,6 @@ export default function EnrollmentForm() {
               Complete the form below to receive your exclusive promo code for 20% off our comprehensive AI program via email.
             </p>
           </div>
-
           <div className="bg-bg-panel border border-line rounded-2xl p-6 md:p-8 shadow-2xl">
             {status === "success" ? (
               <div className="text-center py-12">
@@ -109,7 +97,6 @@ export default function EnrollmentForm() {
                     placeholder="John Doe"
                   />
                 </div>
-
                 <div>
                   <label htmlFor="email" className="block text-sm font-bold text-text mb-2">
                     Email Address *
@@ -125,7 +112,6 @@ export default function EnrollmentForm() {
                     placeholder="john@example.com"
                   />
                 </div>
-
                 <div>
                   <label htmlFor="phone" className="block text-sm font-bold text-text mb-2">
                     Phone Number *
@@ -141,13 +127,11 @@ export default function EnrollmentForm() {
                     placeholder="+91 98765 43210"
                   />
                 </div>
-
                 {errorMessage && (
                   <div className="bg-red-500/10 border border-red-500/30 rounded-lg p-4 text-red-400 text-sm">
                     {errorMessage}
                   </div>
                 )}
-
                 <button
                   type="submit"
                   disabled={status === "loading"}
@@ -165,7 +149,6 @@ export default function EnrollmentForm() {
                     </>
                   )}
                 </button>
-
                 <p className="text-xs font-medium text-text-dim text-center">
                   By submitting this form, you agree to our terms and privacy policy.
                 </p>

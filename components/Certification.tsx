@@ -100,36 +100,74 @@ export default function Certification() {
 
           {/* Eligibility card */}
           <div
-            className="rounded-2xl p-7 md:p-9"
+            className="rounded-2xl p-7 md:p-8"
             style={{
-              background: "linear-gradient(135deg, rgba(52,211,153,0.05) 0%, rgba(15,20,31,0.95) 100%)",
-              border: "1px solid rgba(52,211,153,0.2)",
-              boxShadow: "0 0 40px rgba(52,211,153,0.05)",
+              background: "linear-gradient(135deg, rgba(52,211,153,0.06) 0%, rgba(15,20,31,0.97) 100%)",
+              border: "1px solid rgba(52,211,153,0.25)",
+              boxShadow: "0 0 40px rgba(52,211,153,0.07)",
             }}
           >
-            <p className="text-xs font-data font-bold uppercase tracking-widest mb-5" style={{ color: "#34d399" }}>
-              Eligibility Criteria
-            </p>
-            <ul className="space-y-3">
+            {/* Header */}
+            <div className="flex items-center gap-3 mb-6">
+              <div
+                className="flex items-center justify-center w-10 h-10 rounded-xl shrink-0"
+                style={{ background: "rgba(52,211,153,0.15)", border: "1px solid rgba(52,211,153,0.3)" }}
+              >
+                <span className="material-symbols-rounded select-none" style={{ color: "#34d399", fontSize: "20px" }}>checklist</span>
+              </div>
+              <div>
+                <p className="text-xs font-data font-bold uppercase tracking-widest" style={{ color: "#34d399" }}>Eligibility Criteria</p>
+                <p className="text-[11px] text-text-faint font-medium mt-0.5">Complete all requirements to qualify</p>
+              </div>
+            </div>
+
+            {/* Items */}
+            <ul className="flex flex-col gap-2.5">
               {certification.eligibility.map((e, i) => (
                 <li
                   key={e}
-                  className="flex items-start gap-3 px-4 py-3 rounded-xl"
+                  className="group flex items-center gap-4 px-4 py-3.5 rounded-xl transition-all duration-200 hover:scale-[1.01]"
                   style={{
-                    background: "rgba(255,255,255,0.02)",
-                    border: "1px solid rgba(255,255,255,0.05)",
+                    background: "rgba(52,211,153,0.04)",
+                    border: "1px solid rgba(52,211,153,0.12)",
                   }}
                 >
-                  <span
-                    className="flex items-center justify-center h-6 w-6 rounded-full shrink-0 mt-0.5 font-data text-xs font-bold"
-                    style={{ background: "rgba(52,211,153,0.15)", border: "1px solid rgba(52,211,153,0.3)", color: "#34d399" }}
+                  {/* Step number */}
+                  <div
+                    className="flex items-center justify-center h-8 w-8 rounded-lg shrink-0 font-data text-xs font-bold"
+                    style={{
+                      background: "linear-gradient(135deg, rgba(52,211,153,0.2), rgba(56,189,248,0.15))",
+                      border: "1px solid rgba(52,211,153,0.35)",
+                      color: "#34d399",
+                    }}
                   >
-                    {i + 1}
+                    {String(i + 1).padStart(2, "0")}
+                  </div>
+
+                  {/* Text */}
+                  <span className="text-sm font-semibold text-white leading-snug flex-1">{e}</span>
+
+                  {/* Check icon */}
+                  <span
+                    className="material-symbols-rounded select-none shrink-0"
+                    style={{ color: "#34d399", fontSize: "18px", opacity: 0.5 }}
+                  >
+                    check_circle
                   </span>
-                  <span className="text-sm font-medium text-text-dim leading-relaxed">{e}</span>
                 </li>
               ))}
             </ul>
+
+            {/* Bottom note */}
+            <div
+              className="mt-5 flex items-center gap-2.5 px-4 py-3 rounded-xl"
+              style={{ background: "rgba(52,211,153,0.06)", border: "1px solid rgba(52,211,153,0.15)" }}
+            >
+              <span className="material-symbols-rounded select-none shrink-0" style={{ color: "#34d399", fontSize: "16px" }}>info</span>
+              <p className="text-xs font-medium text-text-dim leading-relaxed">
+                All criteria must be met to receive the official certificate.
+              </p>
+            </div>
           </div>
         </div>
       </div>

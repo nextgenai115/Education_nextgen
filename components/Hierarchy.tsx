@@ -1,5 +1,4 @@
 import { hierarchy } from "@/lib/content";
-
 // Each step gets progressively richer styling to show the hierarchy
 const stepStyles = [
   {
@@ -59,7 +58,6 @@ const stepStyles = [
     indent: "mr-0",
   },
 ];
-
 export default function Hierarchy() {
   return (
     <section className="border-b border-white/[0.06] relative overflow-hidden">
@@ -76,7 +74,6 @@ export default function Hierarchy() {
         </video>
         <div className="absolute inset-0" style={{ background: "rgba(5,8,12,0.7)" }} />
       </div>
-
       {/* Ambient glows */}
       <div className="pointer-events-none absolute inset-0 z-10">
         <div
@@ -88,9 +85,7 @@ export default function Hierarchy() {
           style={{ background: "radial-gradient(circle, rgba(96,165,250,0.06) 0%, transparent 70%)" }}
         />
       </div>
-
       <div className="container-px mx-auto max-w-7xl py-12 md:py-20 lg:py-24 relative z-20">
-
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-10 md:mb-14">
           <div className="inline-block">
@@ -117,10 +112,8 @@ export default function Hierarchy() {
             whole ladder.
           </p>
         </div>
-
         {/* Two-column: steps + image */}
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-
           {/* Steps — pyramid/funnel layout */}
           <div className="flex flex-col gap-2 w-full">
             {hierarchy.map((h, i) => {
@@ -140,7 +133,6 @@ export default function Hierarchy() {
                     className="w-1 shrink-0"
                     style={{ background: `linear-gradient(180deg, transparent, ${s.color}, transparent)` }}
                   />
-
                   {/* Step number */}
                   <div
                     className="flex flex-col items-center justify-center w-14 sm:w-16 shrink-0 py-4"
@@ -159,7 +151,6 @@ export default function Hierarchy() {
                       {s.label}
                     </span>
                   </div>
-
                   {/* Text content */}
                   <div className="flex flex-col justify-center px-4 sm:px-5 py-3.5 gap-0.5 flex-1 min-w-0">
                     <h3
@@ -178,13 +169,11 @@ export default function Hierarchy() {
                 </div>
               );
             })}
-
             {/* Bottom label */}
             <p className="text-center text-xs font-semibold text-text-faint mt-2 tracking-wider uppercase">
               ↑ Every level builds on the last
             </p>
           </div>
-
           {/* Right: image — hidden on mobile, shown lg+ */}
           <div className="hidden lg:flex items-center justify-center w-full">
             <div className="relative w-full max-w-[420px] mx-auto">

@@ -13,7 +13,7 @@ export default function Home() {
       <MarketStats />
       <Hierarchy />
       <Modules />
-      <Certification />
+      {/* <Certification /> */}
       <EnrollmentForm />
       <FAQ />
     </main>

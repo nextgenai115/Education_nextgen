@@ -179,36 +179,16 @@ export default function Nav() {
           ))}
 
           {/* Mobile Education Partners */}
-          <button
-            type="button"
-            onClick={() => setMobilePartnerOpen((v) => !v)}
-            className="flex items-center justify-between px-3 py-2 text-sm font-medium text-slate-200 hover:bg-white/10 hover:text-white rounded-md"
+          <a
+            href="#top"
+            className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-slate-200 hover:bg-white/10 hover:text-white rounded-md"
+            onClick={() => setIsOpen(false)}
           >
-            <span className="flex items-center gap-2">
-              <span className="text-xs font-bold px-1.5 py-0.5 rounded-full" style={{ background: "rgba(96,165,250,0.2)", color: "#7dd3fc" }}>★</span>
-              Education Partners
-            </span>
-            <ChevronDown
-              size={15}
-              className="transition-transform duration-200"
-              style={{ transform: mobilePartnerOpen ? "rotate(180deg)" : "rotate(0deg)" }}
-            />
-          </button>
+            <span className="text-xs font-bold px-1.5 py-0.5 rounded-full" style={{ background: "rgba(96,165,250,0.2)", color: "#7dd3fc" }}>★</span>
+            Education Partners
+          </a>
 
-          {mobilePartnerOpen && (
-            <div className="ml-4 flex flex-col gap-0.5 border-l border-sky-400/20 pl-3">
-              {partners[0].sections.map((s) => (
-                <a
-                  key={s.label}
-                  href={s.href}
-                  className="py-2 text-sm text-slate-300 hover:text-white transition-colors"
-                  onClick={() => { setIsOpen(false); setMobilePartnerOpen(false); }}
-                >
-                  {s.label}
-                </a>
-              ))}
-            </div>
-          )}          <Link
+<Link
             href="/contact"
             className="mt-2 rounded-full bg-gradient-to-r from-sky-500 to-blue-500 px-6 py-2.5 text-center text-sm font-bold text-white"
             onClick={() => setIsOpen(false)}
