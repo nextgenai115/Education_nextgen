@@ -38,7 +38,7 @@
 }
 
 * {
-  border-color: var(--line);
+  border-color: transparent;
 }
 
 html {

@@ -20,8 +20,25 @@ const partners = [
 export default function Nav() {
   const [isOpen, setIsOpen] = useState(false);
   const [partnerOpen, setPartnerOpen] = useState(false);
+  const [hidden, setHidden] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const lastScrollY = useRef(0);
   const pathname = usePathname();
+
+  // Hide on scroll down, show on scroll up
+  useEffect(() => {
+    const onScroll = () => {
+      const current = window.scrollY;
+      if (current > lastScrollY.current && current > 80) {
+        setHidden(true);
+      } else {
+        setHidden(false);
+      }
+      lastScrollY.current = current;
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   // Close dropdown on outside click
   useEffect(() => {
@@ -35,7 +52,10 @@ export default function Nav() {
   }, []);
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-gradient-to-r from-[#050915] via-[#0d1a4a] to-[#1652d6]">
+    <header
+      className="sticky top-0 z-50 w-full bg-gradient-to-r from-[#050915] via-[#0d1a4a] to-[#1652d6] transition-transform duration-300"
+      style={{ transform: hidden ? "translateY(-100%)" : "translateY(0)" }}
+    >
       <div className="mx-auto flex max-w-[1600px] items-center justify-between gap-8 px-8 py-3.5">
 
         {/* Logo + Home on left */}

@@ -16,12 +16,14 @@ export default function FAQ() {
       <div className="container-px mx-auto max-w-7xl py-16 md:py-24 relative">
         <div className="text-center max-w-3xl mx-auto">
           <div className="inline-block">
-            <p
-              className="text-xs font-data font-semibold tracking-widest uppercase px-4 py-2 rounded-full border"
-              style={{ background: "rgba(167,139,250,0.1)", borderColor: "rgba(167,139,250,0.3)", color: "#c4b5fd" }}
+            <div
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border"
+              style={{ background: "rgba(255,197,100,0.1)", borderColor: "rgba(255,197,100,0.35)" }}
             >
-              FAQ
-            </p>
+              <span className="material-symbols-rounded select-none" style={{ color: "#ffc564", fontSize: "16px" }}>auto_awesome</span>
+              <span className="text-sm font-data font-bold tracking-widest uppercase" style={{ color: "#ffc564" }}>FAQ</span>
+              <span className="material-symbols-rounded select-none" style={{ color: "#ffc564", fontSize: "16px" }}>auto_awesome</span>
+            </div>
           </div>
           <h2 className="mt-5 font-display font-bold text-3xl md:text-[2.5rem] leading-[1.1] tracking-[-0.02em]">
             Frequently asked{" "}
