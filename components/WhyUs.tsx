@@ -15,7 +15,7 @@ export default function WhyUs() {
         <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover">
           <source src="/enrol.mp4" type="video/mp4" />
         </video>
-        <div className="absolute inset-0" style={{ background: "rgba(5,8,12,0.6)" }} />
+        <div className="absolute inset-0 bg-bg/75" />
       </div>
       <div className="container-px mx-auto max-w-7xl py-16 md:py-24 relative z-20">
         <div className="text-center max-w-3xl mx-auto">
