@@ -70,11 +70,11 @@ export default function Hierarchy() {
           loop
           muted
           playsInline
-          className="absolute inset-0 w-full h-full object-cover opacity-30"
+          className="absolute inset-0 w-full h-full object-cover"
         >
-          <source src="/hero-video.mp4" type="video/mp4" />
+          <source src="/h.mp4" type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-bg/80" />
+        <div className="absolute inset-0" style={{ background: "rgba(5,8,12,0.7)" }} />
       </div>
 
       {/* Ambient glows */}
@@ -94,16 +94,19 @@ export default function Hierarchy() {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-10 md:mb-14">
           <div className="inline-block">
-            <p
-              className="text-xs font-data font-semibold tracking-widest uppercase px-4 py-2 rounded-full border"
+            <div
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border"
               style={{
-                background: "rgba(167,139,250,0.1)",
-                borderColor: "rgba(167,139,250,0.3)",
-                color: "#c4b5fd",
+                background: "rgba(255,197,100,0.1)",
+                borderColor: "rgba(255,197,100,0.35)",
               }}
             >
-              AI hierarchy
-            </p>
+              <span className="material-symbols-rounded select-none" style={{ color: "#ffc564", fontSize: "16px" }}>auto_awesome</span>
+              <span className="text-sm font-data font-bold tracking-widest uppercase" style={{ color: "#ffc564" }}>
+                AI Hierarchy
+              </span>
+              <span className="material-symbols-rounded select-none" style={{ color: "#ffc564", fontSize: "16px" }}>auto_awesome</span>
+            </div>
           </div>
           <h2 className="mt-5 font-display font-bold text-3xl md:text-[2.5rem] leading-[1.1] tracking-[-0.02em]">
             The{" "}

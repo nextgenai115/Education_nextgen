@@ -21,24 +21,12 @@ const partners = [
     name: "Omkar AI Innovation",
     logo: "/OMKAR-LOGO.jpg",
     description: "AI Unlocked — 5 Module Program",
-    sections: [
-      { label: "Hero / Overview",    href: "#top" },
-      { label: "AI Hierarchy",       href: "#program" },
-      { label: "Program Modules",    href: "#program" },
-      { label: "Automation Demo",    href: "#program" },
-      { label: "Income Paths",       href: "#opportunity" },
-      { label: "Why Join Us",        href: "#opportunity" },
-      { label: "Certification",      href: "#certification" },
-      { label: "Enroll & Pricing",   href: "#enroll" },
-      { label: "FAQ",                href: "#faq" },
-    ],
   },
 ];
 
 export default function Nav() {
   const [isOpen, setIsOpen] = useState(false);
   const [partnerOpen, setPartnerOpen] = useState(false);
-  const [mobilePartnerOpen, setMobilePartnerOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
 
@@ -133,8 +121,10 @@ export default function Nav() {
                   {partners.map((p) => (
                     <div key={p.name}>
                       {/* Partner header */}
-                      <div
-                        className="flex items-center gap-3 px-3 py-2.5 rounded-xl mb-2"
+                      <a
+                        href="#top"
+                        onClick={() => setPartnerOpen(false)}
+                        className="flex items-center gap-3 px-3 py-2.5 rounded-xl hover:bg-white/5 transition-all"
                         style={{ background: "rgba(96,165,250,0.08)", border: "1px solid rgba(96,165,250,0.15)" }}
                       >
                         <div className="h-9 w-9 rounded-lg overflow-hidden shrink-0 bg-white/10 flex items-center justify-center">
@@ -144,22 +134,7 @@ export default function Nav() {
                           <p className="text-sm font-bold text-white leading-tight">{p.name}</p>
                           <p className="text-[11px] text-sky-400 font-medium">{p.description}</p>
                         </div>
-                      </div>
-
-                      {/* Section links */}
-                      <div className="grid grid-cols-2 gap-1">
-                        {p.sections.map((s) => (
-                          <a
-                            key={s.label}
-                            href={s.href}
-                            onClick={() => setPartnerOpen(false)}
-                            className="flex items-center gap-2 px-3 py-2 rounded-lg text-[13px] font-medium text-slate-300 hover:text-white hover:bg-white/5 transition-all"
-                          >
-                            <span className="h-1 w-1 rounded-full bg-sky-400 shrink-0" />
-                            {s.label}
-                          </a>
-                        ))}
-                      </div>
+                      </a>
                     </div>
                   ))}
                 </div>
@@ -233,9 +208,7 @@ export default function Nav() {
                 </a>
               ))}
             </div>
-          )}
-
-          <Link
+          )}          <Link
             href="/contact"
             className="mt-2 rounded-full bg-gradient-to-r from-sky-500 to-blue-500 px-6 py-2.5 text-center text-sm font-bold text-white"
             onClick={() => setIsOpen(false)}

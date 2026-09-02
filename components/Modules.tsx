@@ -3,15 +3,33 @@ import { CheckCircle2, Sparkles, Wrench } from "lucide-react";
 
 export default function Modules() {
   return (
-    <section id="program" className="border-b border-line">
-      <div className="container-px mx-auto max-w-7xl py-16 md:py-24">
+    <section id="program" className="border-b border-white/[0.06] relative overflow-hidden">
+      {/* Static dark bg with ambient glows */}
+      <div className="pointer-events-none absolute inset-0 z-0">
+        <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, #05080c 0%, #0a0520 50%, #05080c 100%)" }} />
+        <div className="absolute top-0 right-1/4 h-[600px] w-[600px] rounded-full" style={{ background: "radial-gradient(circle, rgba(167,139,250,0.08) 0%, transparent 70%)" }} />
+        <div className="absolute bottom-0 left-1/4 h-[500px] w-[500px] rounded-full" style={{ background: "radial-gradient(circle, rgba(96,165,250,0.06) 0%, transparent 70%)" }} />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[400px] w-[800px] rounded-full" style={{ background: "radial-gradient(ellipse, rgba(139,92,246,0.04) 0%, transparent 70%)" }} />
+      </div>
+
+      <div className="container-px mx-auto max-w-7xl py-16 md:py-24 relative z-10">
 
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
           <div className="inline-block">
-            <p className="text-xs font-data font-semibold tracking-widest uppercase px-4 py-2 bg-violet/10 border border-violet/30 rounded-full text-violet">
-              The program
-            </p>
+            <div
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border"
+              style={{
+                background: "rgba(255,197,100,0.1)",
+                borderColor: "rgba(255,197,100,0.35)",
+              }}
+            >
+              <span className="material-symbols-rounded select-none" style={{ color: "#ffc564", fontSize: "16px" }}>auto_awesome</span>
+              <span className="text-sm font-data font-bold tracking-widest uppercase" style={{ color: "#ffc564" }}>
+                The program
+              </span>
+              <span className="material-symbols-rounded select-none" style={{ color: "#ffc564", fontSize: "16px" }}>auto_awesome</span>
+            </div>
           </div>
           <h2 className="mt-5 font-display font-bold text-3xl md:text-[2.6rem] leading-[1.1] tracking-[-0.02em]">
             AI Unlocked —{" "}

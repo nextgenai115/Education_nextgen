@@ -34,9 +34,9 @@ export default function EnrollmentForm() {
       setFormData({ name: "", email: "", phone: "" });
       trackFormSubmission("enrollment_form", "success");
 
-      // Redirect to course page after 3 seconds
+      // Redirect to payment page after 3 seconds
       setTimeout(() => {
-        window.location.href = brand.courseUrl;
+        window.location.href = "https://pages.razorpay.com/pl_SDFYHtGJCRWHoN/view";
       }, 3000);
     } catch (error) {
       setStatus("error");
@@ -53,17 +53,10 @@ export default function EnrollmentForm() {
     <section id="enrollment-form" className="border-b border-line relative overflow-hidden">
       {/* Video background */}
       <div className="absolute inset-0 z-0">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover opacity-40"
-        >
+        <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover">
           <source src="/hero-video.mp4" type="video/mp4" />
         </video>
-        {/* Dark overlay for text readability */}
-        <div className="absolute inset-0 bg-bg/80 backdrop-blur-sm" />
+        <div className="absolute inset-0 bg-bg/75" />
       </div>
 
       {/* Ambient glow effects */}
@@ -96,43 +89,41 @@ export default function EnrollmentForm() {
                   Your exclusive 20% discount promo code will be sent to your email address shortly.
                 </p>
                 <p className="text-sm text-violet">
-                  Redirecting to course page...
+                  Redirecting to payment page...
                 </p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-bold text-text mb-2">
-                      Full Name *
-                    </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      required
-                      value={formData.name}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 bg-bg border border-line rounded-lg text-text placeholder:text-text-faint focus:outline-none focus:ring-2 focus:ring-violet focus:border-transparent transition-all"
-                      placeholder="John Doe"
-                    />
-                  </div>
-                  
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-bold text-text mb-2">
-                      Email Address *
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      required
-                      value={formData.email}
-                      onChange={handleChange}
-                      className="w-full px-4 py-3 bg-bg border border-line rounded-lg text-text placeholder:text-text-faint focus:outline-none focus:ring-2 focus:ring-violet focus:border-transparent transition-all"
-                      placeholder="john@example.com"
-                    />
-                  </div>
+                <div>
+                  <label htmlFor="name" className="block text-sm font-bold text-text mb-2">
+                    Full Name *
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    value={formData.name}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 bg-bg border border-line rounded-lg text-text placeholder:text-text-faint focus:outline-none focus:ring-2 focus:ring-violet focus:border-transparent transition-all"
+                    placeholder="John Doe"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="email" className="block text-sm font-bold text-text mb-2">
+                    Email Address *
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    value={formData.email}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 bg-bg border border-line rounded-lg text-text placeholder:text-text-faint focus:outline-none focus:ring-2 focus:ring-violet focus:border-transparent transition-all"
+                    placeholder="john@example.com"
+                  />
                 </div>
 
                 <div>

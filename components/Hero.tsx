@@ -44,7 +44,7 @@ export default function Hero() {
             >
               <span className="text-white">Get 20% Off</span>
               <br />
-              <span className="gradient-text">AI Revolution.</span>
+              <span className="gradient-text">Master the AI Revolution</span>
             </h1>
 
             <p
