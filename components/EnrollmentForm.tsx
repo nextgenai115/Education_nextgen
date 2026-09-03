@@ -127,6 +127,74 @@ export default function EnrollmentForm() {
                     placeholder="+91 98765 43210"
                   />
                 </div>
+
+                {/* Promo Code + Pricing */}
+                <div
+                  className="rounded-xl p-4"
+                  style={{
+                    background: "linear-gradient(135deg, #1a1000 0%, #2a1a00 100%)",
+                    border: "1px dashed rgba(255,197,100,0.45)",
+                    boxShadow: "0 0 20px rgba(255,197,100,0.08)",
+                  }}
+                >
+                  {/* Pricing row */}
+                  <div className="flex items-center justify-between mb-3 pb-3" style={{ borderBottom: "1px solid rgba(255,197,100,0.15)" }}>
+                    <div className="flex items-center gap-3">
+                      <span className="text-sm font-medium" style={{ color: "#9aa5b8" }}>
+                        Original Price:
+                      </span>
+                      <span className="font-data font-bold text-lg line-through" style={{ color: "#6b7280" }}>
+                        ₹4,999
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <span
+                        className="text-xs font-bold px-2 py-0.5 rounded-full"
+                        style={{ background: "rgba(34,197,94,0.15)", color: "#4ade80", border: "1px solid rgba(34,197,94,0.3)" }}
+                      >
+                        SAVE 20%
+                      </span>
+                      <span className="font-data font-bold text-xl" style={{ color: "#ffc564" }}>
+                        ₹3,999
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Promo code field */}
+                  <div>
+                    <label className="block text-xs font-data font-bold uppercase tracking-widest mb-2" style={{ color: "rgba(255,197,100,0.7)" }}>
+                      Promo Code Applied
+                    </label>
+                    <div className="flex items-center gap-3">
+                      <input
+                        type="text"
+                        readOnly
+                        value="NEXTGEN032"
+                        className="flex-1 px-4 py-2.5 rounded-lg font-data font-bold text-center tracking-widest text-lg cursor-default select-all"
+                        style={{
+                          background: "rgba(255,197,100,0.06)",
+                          border: "1px solid rgba(255,197,100,0.3)",
+                          color: "#ffc564",
+                          outline: "none",
+                        }}
+                      />
+                      <div
+                        className="flex items-center justify-center px-3 py-2.5 rounded-lg shrink-0"
+                        style={{
+                          background: "rgba(34,197,94,0.15)",
+                          border: "1px solid rgba(34,197,94,0.3)",
+                        }}
+                      >
+                        <span className="material-symbols-rounded select-none" style={{ color: "#4ade80", fontSize: "20px" }}>
+                          check_circle
+                        </span>
+                      </div>
+                    </div>
+                    <p className="text-xs font-medium mt-2" style={{ color: "rgba(255,197,100,0.55)" }}>
+                      ✦ Exclusive pricing through NextGen AI Automation partnership
+                    </p>
+                  </div>
+                </div>
                 {errorMessage && (
                   <div className="bg-red-500/10 border border-red-500/30 rounded-lg p-4 text-red-400 text-sm">
                     {errorMessage}
