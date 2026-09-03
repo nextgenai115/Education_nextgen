@@ -66,7 +66,19 @@ export default function EnrollmentForm() {
               Complete the form below to receive your exclusive promo code for 20% off our comprehensive AI program via email.
             </p>
           </div>
-          <div className="bg-bg-panel border border-line rounded-2xl p-6 md:p-8 shadow-2xl">
+          <div
+            className="relative overflow-hidden rounded-2xl p-6 md:p-8"
+            style={{
+              background: "linear-gradient(135deg, #0d1117 0%, #0f0a2e 50%, #0a1535 100%)",
+              border: "1px solid rgba(167,139,250,0.3)",
+              boxShadow: "0 0 60px rgba(139,92,246,0.15), 0 0 120px rgba(96,165,250,0.06), inset 0 1px 0 rgba(255,255,255,0.06)",
+            }}
+          >
+            {/* Top accent line */}
+            <div className="absolute top-0 left-0 right-0 h-[2px] rounded-t-2xl" style={{ background: "linear-gradient(90deg, #a78bfa, #60a5fa, #34d399, #fbbf24)" }} />
+            {/* Corner glows */}
+            <div className="absolute -top-10 -right-10 h-40 w-40 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(167,139,250,0.15) 0%, transparent 70%)" }} />
+            <div className="absolute -bottom-10 -left-10 h-32 w-32 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(96,165,250,0.1) 0%, transparent 70%)" }} />
             {status === "success" ? (
               <div className="text-center py-12">
                 <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green/20 mb-4">
@@ -93,7 +105,8 @@ export default function EnrollmentForm() {
                     required
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-bg border border-line rounded-lg text-text placeholder:text-text-faint focus:outline-none focus:ring-2 focus:ring-violet focus:border-transparent transition-all"
+                    className="w-full px-4 py-3 rounded-xl text-text placeholder:text-text-faint focus:outline-none focus:ring-2 focus:ring-violet focus:border-transparent transition-all"
+                    style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(167,139,250,0.2)" }}
                     placeholder="John Doe"
                   />
                 </div>
@@ -108,7 +121,8 @@ export default function EnrollmentForm() {
                     required
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-bg border border-line rounded-lg text-text placeholder:text-text-faint focus:outline-none focus:ring-2 focus:ring-violet focus:border-transparent transition-all"
+                    className="w-full px-4 py-3 rounded-xl text-text placeholder:text-text-faint focus:outline-none focus:ring-2 focus:ring-violet focus:border-transparent transition-all"
+                    style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(167,139,250,0.2)" }}
                     placeholder="john@example.com"
                   />
                 </div>
@@ -123,77 +137,93 @@ export default function EnrollmentForm() {
                     required
                     value={formData.phone}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 bg-bg border border-line rounded-lg text-text placeholder:text-text-faint focus:outline-none focus:ring-2 focus:ring-violet focus:border-transparent transition-all"
+                    className="w-full px-4 py-3 rounded-xl text-text placeholder:text-text-faint focus:outline-none focus:ring-2 focus:ring-violet focus:border-transparent transition-all"
+                    style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(167,139,250,0.2)" }}
                     placeholder="+91 98765 43210"
                   />
                 </div>
 
                 {/* Promo Code + Pricing */}
+                <div className="px-[15%]">
                 <div
-                  className="rounded-xl p-4"
+                  className="rounded-2xl p-5 relative overflow-hidden"
                   style={{
-                    background: "linear-gradient(135deg, #1a1000 0%, #2a1a00 100%)",
-                    border: "1px dashed rgba(255,197,100,0.45)",
-                    boxShadow: "0 0 20px rgba(255,197,100,0.08)",
+                    background: "linear-gradient(135deg, #0f0a2e 0%, #1e0a3a 40%, #0a1535 100%)",
+                    border: "1px solid rgba(167,139,250,0.5)",
+                    boxShadow: "0 0 40px rgba(139,92,246,0.2), 0 0 80px rgba(96,165,250,0.08), inset 0 1px 0 rgba(255,255,255,0.08)",
                   }}
                 >
+                  {/* Corner glow */}
+                  <div className="absolute -top-6 -right-6 h-24 w-24 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(167,139,250,0.3) 0%, transparent 70%)" }} />
+                  <div className="absolute -bottom-6 -left-6 h-20 w-20 rounded-full pointer-events-none" style={{ background: "radial-gradient(circle, rgba(96,165,250,0.2) 0%, transparent 70%)" }} />
+
+                  {/* Top accent line */}
+                  <div className="absolute top-0 left-0 right-0 h-[2px] rounded-t-2xl" style={{ background: "linear-gradient(90deg, #a78bfa, #60a5fa, #34d399)" }} />
+
                   {/* Pricing row */}
-                  <div className="flex items-center justify-between mb-3 pb-3" style={{ borderBottom: "1px solid rgba(255,197,100,0.15)" }}>
-                    <div className="flex items-center gap-3">
-                      <span className="text-sm font-medium" style={{ color: "#9aa5b8" }}>
-                        Original Price:
-                      </span>
-                      <span className="font-data font-bold text-lg line-through" style={{ color: "#6b7280" }}>
-                        ₹4,999
-                      </span>
+                  <div className="flex items-center justify-between mb-4 pb-4 relative" style={{ borderBottom: "1px solid rgba(167,139,250,0.15)" }}>
+                    <div className="flex flex-col items-center">
+                      <span className="text-[10px] font-data font-bold uppercase tracking-widest mb-1" style={{ color: "#6b7280" }}>Was</span>
+                      <span className="font-data font-bold text-xl line-through" style={{ color: "#4b5563" }}>₹4,999</span>
                     </div>
-                    <div className="flex items-center gap-2">
+
+                    <div className="flex flex-col items-center gap-1">
                       <span
-                        className="text-xs font-bold px-2 py-0.5 rounded-full"
-                        style={{ background: "rgba(34,197,94,0.15)", color: "#4ade80", border: "1px solid rgba(34,197,94,0.3)" }}
+                        className="text-[11px] font-bold px-3 py-0.5 rounded-full animate-pulse"
+                        style={{ background: "linear-gradient(90deg, rgba(52,211,153,0.2), rgba(96,165,250,0.2))", color: "#34d399", border: "1px solid rgba(52,211,153,0.4)" }}
                       >
-                        SAVE 20%
+                        🎉 SAVE 20%
                       </span>
-                      <span className="font-data font-bold text-xl" style={{ color: "#ffc564" }}>
+                      <span className="text-[10px]" style={{ color: "rgba(255,255,255,0.3)" }}>▼</span>
+                    </div>
+
+                    <div className="flex flex-col items-center">
+                      <span className="text-[10px] font-data font-bold uppercase tracking-widest mb-1" style={{ color: "#34d399" }}>Now</span>
+                      <span
+                        className="font-data font-bold text-2xl"
+                        style={{
+                          background: "linear-gradient(135deg, #a78bfa 0%, #60a5fa 50%, #34d399 100%)",
+                          WebkitBackgroundClip: "text",
+                          WebkitTextFillColor: "transparent",
+                          backgroundClip: "text",
+                        }}
+                      >
                         ₹3,999
                       </span>
                     </div>
                   </div>
 
-                  {/* Promo code field */}
-                  <div>
-                    <label className="block text-xs font-data font-bold uppercase tracking-widest mb-2" style={{ color: "rgba(255,197,100,0.7)" }}>
-                      Promo Code Applied
+                  {/* Promo code */}
+                  <div className="relative">
+                    <label className="block text-[10px] font-data font-bold uppercase tracking-widest mb-2 text-center" style={{ color: "rgba(167,139,250,0.8)" }}>
+                      ✦ Promo Code Applied ✦
                     </label>
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-2">
                       <input
                         type="text"
                         readOnly
                         value="NEXTGEN032"
-                        className="flex-1 px-4 py-2.5 rounded-lg font-data font-bold text-center tracking-widest text-lg cursor-default select-all"
+                        className="flex-1 px-4 py-2.5 rounded-xl font-data font-bold text-center tracking-[0.3em] text-base cursor-default select-all"
                         style={{
-                          background: "rgba(255,197,100,0.06)",
-                          border: "1px solid rgba(255,197,100,0.3)",
-                          color: "#ffc564",
+                          background: "linear-gradient(135deg, rgba(167,139,250,0.12), rgba(96,165,250,0.08))",
+                          border: "1px solid rgba(167,139,250,0.4)",
+                          color: "#e9d5ff",
                           outline: "none",
+                          letterSpacing: "0.2em",
                         }}
                       />
                       <div
-                        className="flex items-center justify-center px-3 py-2.5 rounded-lg shrink-0"
-                        style={{
-                          background: "rgba(34,197,94,0.15)",
-                          border: "1px solid rgba(34,197,94,0.3)",
-                        }}
+                        className="flex items-center justify-center w-10 h-10 rounded-xl shrink-0"
+                        style={{ background: "linear-gradient(135deg, rgba(52,211,153,0.2), rgba(96,165,250,0.15))", border: "1px solid rgba(52,211,153,0.4)" }}
                       >
-                        <span className="material-symbols-rounded select-none" style={{ color: "#4ade80", fontSize: "20px" }}>
-                          check_circle
-                        </span>
+                        <span className="material-symbols-rounded select-none" style={{ color: "#34d399", fontSize: "20px" }}>check_circle</span>
                       </div>
                     </div>
-                    <p className="text-xs font-medium mt-2" style={{ color: "rgba(255,197,100,0.55)" }}>
-                      ✦ Exclusive pricing through NextGen AI Automation partnership
+                    <p className="text-[11px] font-semibold mt-2 text-center" style={{ color: "#c4b5fd" }}>
+                      Exclusive pricing via NextGen AI Automation
                     </p>
                   </div>
+                </div>
                 </div>
                 {errorMessage && (
                   <div className="bg-red-500/10 border border-red-500/30 rounded-lg p-4 text-red-400 text-sm">
@@ -203,7 +233,12 @@ export default function EnrollmentForm() {
                 <button
                   type="submit"
                   disabled={status === "loading"}
-                  className="w-full inline-flex items-center justify-center gap-2 bg-violet text-bg font-medium text-sm rounded-lg px-6 py-4 hover:bg-[#d0d0d0] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full inline-flex items-center justify-center gap-2 font-bold text-sm rounded-xl px-6 py-4 transition-all duration-200 hover:scale-[1.02] disabled:opacity-50 disabled:cursor-not-allowed"
+                  style={{
+                    background: "linear-gradient(135deg, #a78bfa, #60a5fa)",
+                    color: "#fff",
+                    boxShadow: "0 4px 20px rgba(167,139,250,0.35)",
+                  }}
                 >
                   {status === "loading" ? (
                     <>
