@@ -37,7 +37,7 @@ export default function Hero() {
               WebkitTextFillColor: "transparent",
               backgroundClip: "text",
             }}>
-              NexGen AI Education Partner
+              NextGen AI Education Partner
             </span>
             <span style={{ color: "rgba(255,255,255,0.3)" }}>·</span>
             <span style={{

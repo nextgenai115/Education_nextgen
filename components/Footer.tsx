@@ -28,11 +28,11 @@ export default function Footer() {
             <div className="flex items-center gap-3 mb-4">
               <img
                 src="/nextgen-ai-logo.37c8a695.png"
-                alt="Omkar AI Innovation"
+                alt="NextGen AI Automation"
                 className="h-10 w-auto object-contain"
               />
               <span className="font-display font-bold text-[16px] text-white">
-                {brand.name}
+                NextGen AI Automation
               </span>
             </div>
             <p className="mb-5 max-w-xs text-sm leading-relaxed text-slate-400">
