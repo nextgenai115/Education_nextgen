@@ -16,9 +16,13 @@ function getResendClient() {
 }
 
 async function sendToGoogleSheets(data: EnrollmentData & { submittedAt: string }) {
-  const webhookUrl = process.env.GOOGLE_SHEETS_WEBHOOK_URL;
+  // Try n8n webhook first, fall back to direct Google Sheets webhook
+  const n8nUrl = process.env.N8N_WEBHOOK_URL;
+  const directUrl = process.env.GOOGLE_SHEETS_WEBHOOK_URL;
+  const webhookUrl = n8nUrl || directUrl;
+
   if (!webhookUrl) {
-    console.warn('GOOGLE_SHEETS_WEBHOOK_URL not configured, skipping Google Sheets');
+    console.warn('No webhook URL configured (N8N_WEBHOOK_URL or GOOGLE_SHEETS_WEBHOOK_URL), skipping');
     return;
   }
   try {
@@ -32,10 +36,10 @@ async function sendToGoogleSheets(data: EnrollmentData & { submittedAt: string }
         submittedAt: data.submittedAt,
       }),
     });
-    const result = await response.json();
-    console.log('Google Sheets response:', result);
+    const text = await response.text();
+    console.log('Webhook response:', response.status, text);
   } catch (error) {
-    console.error('Google Sheets error:', error);
+    console.error('Webhook error:', error);
   }
 }
 
@@ -118,15 +122,8 @@ export async function POST(request: Request) {
       return Response.json({ error: 'Missing required fields' }, { status: 400 });
     }
 
-    // Store data in Google Sheets first (always)
+    // n8n handles everything — Google Sheets + Email in one webhook call
     await sendToGoogleSheets({ ...data, submittedAt: new Date().toISOString() });
-
-    // Send email notification (non-fatal)
-    try {
-      await sendEnrollmentEmail(data);
-    } catch (emailError) {
-      console.error("Email failed but continuing:", emailError);
-    }
 
     return Response.json({ success: true, message: 'Enrollment submitted successfully' });
 
