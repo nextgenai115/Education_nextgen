@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { Send, CheckCircle, Loader2 } from "lucide-react";
-import { trackFormSubmission } from "@/lib/ga4";
+import { trackFormSubmission, trackButtonClick } from "@/lib/ga4";
 import { brand } from "@/lib/content";
 export default function EnrollmentForm() {
   const [formData, setFormData] = useState({
@@ -24,6 +24,7 @@ export default function EnrollmentForm() {
   const [errorMessage, setErrorMessage] = useState("");
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    trackButtonClick("Enroll Now", "enrollment_form");
     setStatus("loading");
     setErrorMessage("");
     try {

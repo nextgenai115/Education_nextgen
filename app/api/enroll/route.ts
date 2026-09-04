@@ -41,8 +41,14 @@ export async function POST(request: Request) {
       return Response.json({ error: 'Missing required fields' }, { status: 400 });
     }
 
+    // Convert to IST (UTC+5:30)
+    const now = new Date();
+    const istOffset = 5.5 * 60 * 60 * 1000;
+    const istTime = new Date(now.getTime() + istOffset);
+    const submittedAt = istTime.toISOString().replace('T', ' ').replace('Z', '') + ' IST';
+
     // Send to n8n — handles Google Sheets + Email
-    await sendToGoogleSheets({ ...data, submittedAt: new Date().toISOString() });
+    await sendToGoogleSheets({ ...data, submittedAt });
 
     return Response.json({ success: true, message: 'Enrollment submitted successfully' });
 
