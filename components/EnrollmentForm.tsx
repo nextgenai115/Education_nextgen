@@ -29,8 +29,8 @@ export default function EnrollmentForm() {
       trackFormSubmission("enrollment_form", "success");
       // Redirect to payment page after 3 seconds
       setTimeout(() => {
-        window.location.href = "https://pages.razorpay.com/pl_SDFYHtGJCRWHoN/view";
-      }, 3000);
+        window.location.href = "https://pages.razorpay.com/pl_TXba8xVI1KE2ig/view";
+      }, 2000);
     } catch (error) {
       setStatus("error");
       setErrorMessage("Something went wrong. Please try again.");
