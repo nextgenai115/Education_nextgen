@@ -5,17 +5,22 @@ import { MapPin, Phone, Mail, MessageCircle } from "lucide-react";
 import { brand } from "@/lib/content";
 
 const quickLinks = [
-  { label: "Our Services", href: "/services" },
-  { label: "Case Studies", href: "/case-studies" },
-  { label: "Pricing Plans", href: "/pricing" },
-  { label: "About Us", href: "/about" },
+  { label: "Home",          href: "https://www.nextgenaiautomation.net/" },
+  { label: "Services",      href: "https://www.nextgenaiautomation.net/services" },
+  { label: "Case Studies",  href: "https://www.nextgenaiautomation.net/case-studies" },
+  { label: "Pricing",       href: "https://www.nextgenaiautomation.net/pricing" },
+  { label: "About Us",      href: "https://www.nextgenaiautomation.net/about" },
+  { label: "Portfolio",     href: "https://www.nextgenaiautomation.net/portfolio" },
+  { label: "Contact",       href: "https://www.nextgenaiautomation.net/contact" },
+  { label: "Blog",          href: "https://blog.nextgenaiautomation.net" },
 ];
 
 const serviceLinks = [
-  { label: "AI Agents", href: "/services" },
-  { label: "Workflow Automation", href: "/services" },
-  { label: "Manufacturing AI", href: "/services" },
-  { label: "CRM Integration", href: "/services" },
+  { label: "AI Agents",               href: "https://www.nextgenaiautomation.net/services" },
+  { label: "Manufacturing Automation", href: "https://www.nextgenaiautomation.net/services" },
+  { label: "Workflow Automation",      href: "https://www.nextgenaiautomation.net/services" },
+  { label: "CRM Automation",           href: "https://www.nextgenaiautomation.net/services" },
+  { label: "Website Development",      href: "https://www.nextgenaiautomation.net/services" },
 ];
 
 export default function Footer() {
@@ -52,9 +57,9 @@ export default function Footer() {
             <ul className="space-y-3 text-sm">
               {quickLinks.map((link) => (
                 <li key={link.label}>
-                  <Link href={link.href} className="text-slate-400 transition-colors hover:text-blue-400">
+                  <a href={link.href} target="_blank" rel="noopener noreferrer" className="text-slate-400 transition-colors hover:text-blue-400">
                     {link.label}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>
@@ -66,9 +71,9 @@ export default function Footer() {
             <ul className="space-y-3 text-sm">
               {serviceLinks.map((link) => (
                 <li key={link.label}>
-                  <Link href={link.href} className="text-slate-400 transition-colors hover:text-blue-400">
+                  <a href={link.href} target="_blank" rel="noopener noreferrer" className="text-slate-400 transition-colors hover:text-blue-400">
                     {link.label}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>
@@ -102,12 +107,12 @@ export default function Footer() {
         <div className="mt-10 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-6 text-sm text-slate-500 sm:flex-row">
           <p>© 2026 NextGen AI Automation. All rights reserved.</p>
           <div className="flex gap-6">
-            <Link href="/privacy-policy" className="hover:text-blue-400">
+            <a href="https://www.nextgenaiautomation.net/privacy-policy" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400">
               Privacy Policy
-            </Link>
-            <Link href="/terms-and-conditions" className="hover:text-blue-400">
+            </a>
+            <a href="https://www.nextgenaiautomation.net/terms-and-conditions" target="_blank" rel="noopener noreferrer" className="hover:text-blue-400">
               Terms of Service
-            </Link>
+            </a>
           </div>
         </div>
       </div>
