@@ -5,14 +5,10 @@ import { MapPin, Phone, Mail, MessageCircle } from "lucide-react";
 import { brand } from "@/lib/content";
 
 const quickLinks = [
-  { label: "Home",          href: "https://www.nextgenaiautomation.net/" },
-  { label: "Services",      href: "https://www.nextgenaiautomation.net/services" },
-  { label: "Case Studies",  href: "https://www.nextgenaiautomation.net/case-studies" },
-  { label: "Pricing",       href: "https://www.nextgenaiautomation.net/pricing" },
-  { label: "About Us",      href: "https://www.nextgenaiautomation.net/about" },
-  { label: "Portfolio",     href: "https://www.nextgenaiautomation.net/portfolio" },
-  { label: "Contact",       href: "https://www.nextgenaiautomation.net/contact" },
-  { label: "Blog",          href: "https://blog.nextgenaiautomation.net" },
+  { label: "Our Services", href: "https://www.nextgenaiautomation.net/services" },
+  { label: "Case Studies", href: "https://www.nextgenaiautomation.net/case-studies" },
+  { label: "Pricing Plans", href: "https://www.nextgenaiautomation.net/pricing" },
+  { label: "About Us",     href: "https://www.nextgenaiautomation.net/about" },
 ];
 
 const serviceLinks = [
