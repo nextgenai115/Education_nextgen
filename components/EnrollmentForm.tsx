@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Send, CheckCircle, Loader2 } from "lucide-react";
 import { trackFormSubmission } from "@/lib/ga4";
 import { brand } from "@/lib/content";
@@ -10,6 +10,17 @@ export default function EnrollmentForm() {
     phone: ""
   });
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+
+  // Force reload when user navigates back from Razorpay (bfcache fix)
+  useEffect(() => {
+    const handlePageShow = (e: PageTransitionEvent) => {
+      if (e.persisted) {
+        window.location.reload();
+      }
+    };
+    window.addEventListener("pageshow", handlePageShow);
+    return () => window.removeEventListener("pageshow", handlePageShow);
+  }, []);
   const [errorMessage, setErrorMessage] = useState("");
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -110,6 +121,7 @@ export default function EnrollmentForm() {
                     placeholder="John Doe"
                   />
                 </div>
+
                 <div>
                   <label htmlFor="email" className="block text-sm font-bold text-text mb-2">
                     Email Address *
@@ -163,7 +175,7 @@ export default function EnrollmentForm() {
                   {/* Pricing row */}
                   <div className="flex items-center justify-between mb-4 pb-4 relative" style={{ borderBottom: "1px solid rgba(167,139,250,0.15)" }}>
                     <div className="flex flex-col items-center">
-                      <span className="text-[10px] font-data font-bold uppercase tracking-widest mb-1" style={{ color: "#6b7280" }}>Was</span>
+                      <span className="text-[10px] font-data font-bold uppercase tracking-widest mb-1" style={{ color: "#6b7280" }}>Regular Price</span>
                       <span className="font-data font-bold text-xl line-through" style={{ color: "#4b5563" }}>₹4,999</span>
                     </div>
 
