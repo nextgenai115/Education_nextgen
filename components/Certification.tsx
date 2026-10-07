@@ -1,0 +1,178 @@
+import { certification } from "@/lib/content";
+
+const detailIcons: Record<string, string> = {
+  Format:      "workspace_premium",
+  Issuer:      "business",
+  Status:      "verified",
+  Recognition: "emoji_events",
+  Mentorship:  "groups",
+  Career:      "trending_up",
+};
+
+const detailColors: Record<string, { color: string; bg: string; border: string }> = {
+  Format:      { color: "#a78bfa", bg: "rgba(167,139,250,0.1)",  border: "rgba(167,139,250,0.25)"  },
+  Issuer:      { color: "#60a5fa", bg: "rgba(96,165,250,0.1)",   border: "rgba(96,165,250,0.25)"   },
+  Status:      { color: "#fbbf24", bg: "rgba(251,191,36,0.1)",   border: "rgba(251,191,36,0.25)"   },
+  Recognition: { color: "#34d399", bg: "rgba(52,211,153,0.1)",   border: "rgba(52,211,153,0.25)"   },
+  Mentorship:  { color: "#f472b6", bg: "rgba(244,114,182,0.1)",  border: "rgba(244,114,182,0.25)"  },
+  Career:      { color: "#38bdf8", bg: "rgba(56,189,248,0.1)",   border: "rgba(56,189,248,0.25)"   },
+};
+
+export default function Certification() {
+  return (
+    <section id="certification" className="border-b border-white/[0.06] relative overflow-hidden">
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 h-[500px] w-[800px] rounded-full" style={{ background: "radial-gradient(ellipse, rgba(167,139,250,0.06) 0%, transparent 70%)" }} />
+      </div>
+
+      <div className="container-px mx-auto max-w-7xl py-16 md:py-24 relative">
+        <div className="text-center max-w-3xl mx-auto">
+          <div className="inline-block">
+            <div
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border"
+              style={{ background: "linear-gradient(135deg, #1a1000 0%, #2a1a00 50%, #1a1000 100%)", borderColor: "rgba(255,197,100,0.5)", boxShadow: "0 0 20px rgba(255,197,100,0.15), inset 0 1px 0 rgba(255,197,100,0.1)" }}
+            >
+              <span className="material-symbols-rounded select-none" style={{ color: "#ffc564", fontSize: "16px" }}>auto_awesome</span>
+              <span className="text-sm font-data font-bold tracking-widest uppercase" style={{ color: "#ffc564" }}>Completion &amp; certification</span>
+              <span className="material-symbols-rounded select-none" style={{ color: "#ffc564", fontSize: "16px" }}>auto_awesome</span>
+            </div>
+          </div>
+          <h2 className="mt-5 font-display font-bold text-3xl md:text-[2.5rem] leading-[1.1] tracking-[-0.02em]">
+            What you{" "}
+            <span className="gradient-text">earn</span>{" "}
+            after all 5 modules
+          </h2>
+          <p className="mt-4 text-text-dim font-medium leading-relaxed">{certification.intro}</p>
+        </div>
+
+        <div className="mt-14 grid lg:grid-cols-[1.1fr_0.9fr] gap-6 lg:gap-8">
+
+          {/* Details card */}
+          <div
+            className="rounded-2xl p-7 md:p-8"
+            style={{
+              background: "linear-gradient(135deg, rgba(15,20,31,0.98) 0%, rgba(20,15,40,0.95) 100%)",
+              border: "1px solid rgba(167,139,250,0.2)",
+              boxShadow: "0 0 40px rgba(167,139,250,0.06)",
+            }}
+          >
+            <p className="text-xs font-data font-bold uppercase tracking-widest mb-5" style={{ color: "#a78bfa" }}>
+              Certificate Details
+            </p>
+            <div className="flex flex-col gap-3">
+              {certification.details.map((d) => {
+                const icon = detailIcons[d.label] ?? "info";
+                const s = detailColors[d.label] ?? { color: "#a78bfa", bg: "rgba(167,139,250,0.1)", border: "rgba(167,139,250,0.2)" };
+                return (
+                  <div
+                    key={d.label}
+                    className="flex items-center gap-4 px-4 py-3.5 rounded-xl transition-all duration-200 hover:scale-[1.01]"
+                    style={{
+                      background: "rgba(255,255,255,0.025)",
+                      border: "1px solid rgba(255,255,255,0.07)",
+                    }}
+                  >
+                    {/* Icon tile */}
+                    <div
+                      className="flex items-center justify-center w-10 h-10 rounded-xl shrink-0"
+                      style={{ background: s.bg, border: `1px solid ${s.border}` }}
+                    >
+                      <span className="material-symbols-rounded select-none" style={{ color: s.color, fontSize: "18px" }}>
+                        {icon}
+                      </span>
+                    </div>
+
+                    {/* Label + Value */}
+                    <div className="flex-1 min-w-0">
+                      <p className="text-[10px] font-data font-bold uppercase tracking-widest mb-0.5" style={{ color: s.color, opacity: 0.75 }}>
+                        {d.label}
+                      </p>
+                      <p className="text-sm font-bold text-white leading-snug">{d.value}</p>
+                    </div>
+
+                    {/* Check tick */}
+                    <span className="material-symbols-rounded select-none shrink-0" style={{ color: s.color, fontSize: "17px", opacity: 0.55 }}>
+                      check_circle
+                    </span>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Eligibility card */}
+          <div
+            className="rounded-2xl p-7 md:p-8"
+            style={{
+              background: "linear-gradient(135deg, rgba(52,211,153,0.06) 0%, rgba(15,20,31,0.97) 100%)",
+              border: "1px solid rgba(52,211,153,0.25)",
+              boxShadow: "0 0 40px rgba(52,211,153,0.07)",
+            }}
+          >
+            {/* Header */}
+            <div className="flex items-center gap-3 mb-6">
+              <div
+                className="flex items-center justify-center w-10 h-10 rounded-xl shrink-0"
+                style={{ background: "rgba(52,211,153,0.15)", border: "1px solid rgba(52,211,153,0.3)" }}
+              >
+                <span className="material-symbols-rounded select-none" style={{ color: "#34d399", fontSize: "20px" }}>checklist</span>
+              </div>
+              <div>
+                <p className="text-xs font-data font-bold uppercase tracking-widest" style={{ color: "#34d399" }}>Eligibility Criteria</p>
+                <p className="text-[11px] text-text-faint font-medium mt-0.5">Complete all requirements to qualify</p>
+              </div>
+            </div>
+
+            {/* Items */}
+            <ul className="flex flex-col gap-2.5">
+              {certification.eligibility.map((e, i) => (
+                <li
+                  key={e}
+                  className="group flex items-center gap-4 px-4 py-3.5 rounded-xl transition-all duration-200 hover:scale-[1.01]"
+                  style={{
+                    background: "rgba(52,211,153,0.04)",
+                    border: "1px solid rgba(52,211,153,0.12)",
+                  }}
+                >
+                  {/* Step number */}
+                  <div
+                    className="flex items-center justify-center h-8 w-8 rounded-lg shrink-0 font-data text-xs font-bold"
+                    style={{
+                      background: "linear-gradient(135deg, rgba(52,211,153,0.2), rgba(56,189,248,0.15))",
+                      border: "1px solid rgba(52,211,153,0.35)",
+                      color: "#34d399",
+                    }}
+                  >
+                    {String(i + 1).padStart(2, "0")}
+                  </div>
+
+                  {/* Text */}
+                  <span className="text-sm font-semibold text-white leading-snug flex-1">{e}</span>
+
+                  {/* Check icon */}
+                  <span
+                    className="material-symbols-rounded select-none shrink-0"
+                    style={{ color: "#34d399", fontSize: "18px", opacity: 0.5 }}
+                  >
+                    check_circle
+                  </span>
+                </li>
+              ))}
+            </ul>
+
+            {/* Bottom note */}
+            <div
+              className="mt-5 flex items-center gap-2.5 px-4 py-3 rounded-xl"
+              style={{ background: "rgba(52,211,153,0.06)", border: "1px solid rgba(52,211,153,0.15)" }}
+            >
+              <span className="material-symbols-rounded select-none shrink-0" style={{ color: "#34d399", fontSize: "16px" }}>info</span>
+              <p className="text-xs font-medium text-text-dim leading-relaxed">
+                All criteria must be met to receive the official certificate.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
