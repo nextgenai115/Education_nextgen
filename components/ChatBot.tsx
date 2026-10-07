@@ -18,6 +18,14 @@ export default function ChatBot() {
           createChat({
             webhookUrl:
               'https://n8n.nextgenaiautomation.net/webhook/680ac075-1f23-4980-a428-cc36763b8f76/chat',
+            // Override the default red primary colour to match site theme
+            style: {
+              '--chat--color-primary': '#a78bfa',
+              '--chat--color-primary-shade-50': '#9070f0',
+              '--chat--color-primary-shade-100': '#7c5cbf',
+              '--chat--color-secondary': '#a78bfa',
+              '--chat--color-secondary-shade-50': '#9070f0',
+            },
           });
         }
       }
