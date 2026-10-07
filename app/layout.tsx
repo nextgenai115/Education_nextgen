@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import ChatBot from "@/components/ChatBot";
 
 export const metadata: Metadata = {
   title: "AI Unlocked — Master the AI Revolution | Omkar AI Innovation",
@@ -54,6 +55,7 @@ export default function RootLayout({
         <Nav />
         {children}
         <Footer />
+        <ChatBot />
       </body>
     </html>
   );
