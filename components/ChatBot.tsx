@@ -14,8 +14,6 @@ export default function ChatBot() {
     document.head.appendChild(link);
 
     // 2. Inject the chat bundle as a real <script type="module">
-    //    This is the exact pattern from the n8n docs — dynamic import()
-    //    of a remote URL is blocked by webpack, so we use a script tag instead.
     const script = document.createElement('script');
     script.id = 'n8n-chat-script';
     script.type = 'module';
@@ -23,6 +21,20 @@ export default function ChatBot() {
       import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
       createChat({
         webhookUrl: 'https://n8n.nextgenaiautomation.net/webhook/680ac075-1f23-4980-a428-cc36763b8f76/chat',
+        mode: 'window',
+        showWelcomeScreen: false,
+        initialMessages: [
+          'Welcome to NextGen AI Automation!!! How can I help you today?'
+        ],
+        i18n: {
+          en: {
+            title: 'NextGen AI',
+            subtitle: 'How can I help you today?',
+            footer: '',
+            getStarted: 'Start Chat',
+            inputPlaceholder: 'Type your message...',
+          },
+        },
       });
     `;
     document.body.appendChild(script);
