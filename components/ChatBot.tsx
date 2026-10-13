@@ -32,7 +32,7 @@ export default function ChatBot() {
           createChat({
             webhookUrl: ${JSON.stringify(CHAT_URL)},
             mode: 'window',
-            showWelcomeScreen: false,
+            showWelcomeScreen: true,
             // enableStreaming: true, // only if the Chat Trigger response mode is "Streaming"
             initialMessages: ['Welcome to NextGen AI Automation!!! How can I help you today?'],
             i18n: {
