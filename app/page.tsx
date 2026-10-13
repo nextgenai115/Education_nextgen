@@ -8,6 +8,7 @@ import WhyUs from "@/components/WhyUs";
 import Certification from "@/components/Certification";
 import EnrollmentForm from "@/components/EnrollmentForm";
 import FAQ from "@/components/FAQ";
+import ChatBot from "@/components/ChatBot";
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
       <Certification />
       <EnrollmentForm />
       <FAQ />
+      <ChatBot />
     </main>
   );
 }
