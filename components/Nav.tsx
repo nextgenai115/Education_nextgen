@@ -187,14 +187,64 @@ export default function Nav() {
           >
             Home
           </Link>
-          <a
-            href="#top"
-            className="flex items-center gap-2 px-4 py-2.5 text-sm font-semibold text-slate-200 hover:bg-white/10 hover:text-white rounded-lg"
-            onClick={() => setIsOpen(false)}
-          >
-            <span className="text-xs font-bold px-1.5 py-0.5 rounded-full" style={{ background: "rgba(96,165,250,0.2)", color: "#7dd3fc" }}>★</span>
-            Education Partners
-          </a>
+          
+          {/* Education Partners with expandable sections */}
+          <div>
+            <button
+              type="button"
+              onClick={() => setPartnerOpen(!partnerOpen)}
+              className="flex items-center justify-between w-full px-4 py-2.5 text-sm font-semibold text-slate-200 hover:bg-white/10 hover:text-white rounded-lg"
+            >
+              <span className="flex items-center gap-2">
+                <span className="text-xs font-bold px-1.5 py-0.5 rounded-full" style={{ background: "rgba(96,165,250,0.2)", color: "#7dd3fc" }}>★</span>
+                Education Partners
+              </span>
+              <ChevronDown
+                size={16}
+                style={{ transform: partnerOpen ? "rotate(180deg)" : "rotate(0deg)", transition: "transform 0.2s" }}
+              />
+            </button>
+            
+            {partnerOpen && (
+              <div className="pl-4 pr-2 py-2 space-y-1">
+                {partners.map((p) => (
+                  <div key={p.name}>
+                    {/* Partner header */}
+                    <div
+                      className="flex items-center gap-3 px-3 py-2 rounded-lg mb-2"
+                      style={{ background: "rgba(96,165,250,0.08)", border: "1px solid rgba(96,165,250,0.15)" }}
+                    >
+                      <div className="h-8 w-8 rounded-lg overflow-hidden shrink-0 bg-white/10 flex items-center justify-center">
+                        <img src={p.logo} alt={p.name} className="h-6 w-6 object-contain" />
+                      </div>
+                      <div>
+                        <p className="text-xs font-bold text-white leading-tight">{p.name}</p>
+                        <p className="text-[10px] text-sky-400 font-medium">{p.description}</p>
+                      </div>
+                    </div>
+
+                    {/* Section links */}
+                    <div className="space-y-1">
+                      {p.sections.map((s) => (
+                        <a
+                          key={s.label}
+                          href={s.href}
+                          onClick={() => {
+                            setIsOpen(false);
+                            setPartnerOpen(false);
+                          }}
+                          className="flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-medium text-slate-300 hover:text-white transition-all hover:bg-white/10"
+                        >
+                          <span className="h-1 w-1 rounded-full shrink-0" style={{ background: "rgba(96,165,250,0.5)" }} />
+                          {s.label}
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
         </nav>
       )}
     </header>

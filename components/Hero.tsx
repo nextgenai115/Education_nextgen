@@ -114,7 +114,7 @@ export default function Hero() {
           {/* Pricing card */}
           <div className="animate-rise self-start lg:-mt-[25px]" style={{ animationDelay: "200ms" }}>
             <div
-              className="rounded-2xl p-6 md:p-8 relative overflow-hidden"
+              className="rounded-2xl p-5 md:p-6 lg:p-8 relative overflow-hidden"
               style={{
                 background: "linear-gradient(135deg, rgba(15,20,31,0.95) 0%, rgba(20,15,40,0.9) 100%)",
                 border: "1px solid rgba(167,139,250,0.25)",
@@ -128,9 +128,9 @@ export default function Hero() {
                 ✦ Limited time special offer
               </p>
 
-              <div className="mt-5 flex items-end justify-between gap-4">
+              <div className="mt-5 flex flex-col md:flex-row items-end justify-between gap-4 md:gap-0">
                 {/* Left: prices */}
-                <div>
+                <div className="w-full md:w-auto">
                   <div>
                     <p className="text-xs font-bold text-text-dim">Website price</p>
                     <p className="font-data text-lg font-bold text-text-dim line-through decoration-1 mt-0.5">
@@ -139,20 +139,20 @@ export default function Hero() {
                   </div>
                   <div className="mt-3">
                     <p className="text-xs font-semibold text-text-dim">NexGenAI Automation price</p>
-                    <p className="font-display font-bold text-5xl text-white mt-1">
+                    <p className="font-display font-bold text-4xl md:text-5xl text-white mt-1">
                       ₹{pricing.partnerPrice}
-                      <span className="text-xl font-semibold text-text-dim">/-</span>
+                      <span className="text-lg md:text-xl font-semibold text-text-dim">/-</span>
                     </p>
                   </div>
                 </div>
 
                 {/* Right: promo code */}
                 <div
-                  className="flex flex-col items-center justify-center px-4 py-3 rounded-xl shrink-0"
+                  className="flex flex-col items-center justify-center px-4 py-3 rounded-xl shrink-0 w-full md:w-auto"
                   style={{
                     background: "rgba(251,191,36,0.06)",
                     border: "1px dashed rgba(251,191,36,0.35)",
-                    minWidth: "110px",
+                    minWidth: "unset",
                   }}
                 >
                   <p className="text-[9px] font-data font-bold uppercase tracking-widest mb-1" style={{ color: "rgba(251,191,36,0.6)" }}>

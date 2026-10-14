@@ -157,9 +157,9 @@ export default function EnrollmentForm() {
                 </div>
 
                 {/* Promo Code + Pricing */}
-                <div className="px-[15%]">
+                <div className="px-4 md:px-[15%]">
                 <div
-                  className="rounded-2xl p-5 relative overflow-hidden"
+                  className="rounded-2xl p-4 md:p-5 relative overflow-hidden"
                   style={{
                     background: "linear-gradient(135deg, #0f0a2e 0%, #1e0a3a 40%, #0a1535 100%)",
                     border: "1px solid rgba(167,139,250,0.5)",
@@ -174,7 +174,7 @@ export default function EnrollmentForm() {
                   <div className="absolute top-0 left-0 right-0 h-[2px] rounded-t-2xl" style={{ background: "linear-gradient(90deg, #a78bfa, #60a5fa, #34d399)" }} />
 
                   {/* Pricing row */}
-                  <div className="flex items-center justify-between mb-4 pb-4 relative" style={{ borderBottom: "1px solid rgba(167,139,250,0.15)" }}>
+                  <div className="flex flex-col md:flex-row items-center justify-between mb-4 pb-4 relative gap-4 md:gap-0" style={{ borderBottom: "1px solid rgba(167,139,250,0.15)" }}>
                     <div className="flex flex-col items-center">
                       <span className="text-[10px] font-data font-bold uppercase tracking-widest mb-1" style={{ color: "#6b7280" }}>Regular Price</span>
                       <span className="font-data font-bold text-xl line-through" style={{ color: "#4b5563" }}>₹4,999</span>
