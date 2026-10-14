@@ -34,11 +34,11 @@ export default function ChatBot() {
             mode: 'window',
             showWelcomeScreen: false,
             // enableStreaming: true, // only if the Chat Trigger response mode is "Streaming"
-            initialMessages: ['Welcome to NextGen AI Automation!!! How can I help you today?'],
+            initialMessages: ['Hello! I am the NextGen AI assistant. How can I help you automate your business today?'],
             i18n: {
               en: {
-                title: 'NextGen AI',
-                subtitle: 'How can I help you today?',
+                title: 'NextGen AI Assistant',
+                subtitle: '',
                 footer: '',
                 getStarted: 'Start Chat',
                 inputPlaceholder: 'Type your message...',
@@ -54,11 +54,11 @@ export default function ChatBot() {
     const style = document.createElement('style');
     style.textContent = `
       :root {
-        --chat--color--primary: #a78bfa;
-        --chat--color--primary-shade-50: #9070f0;
-        --chat--color--primary--shade-100: #7c5cbf;
-        --chat--color--secondary: #a78bfa;
-        --chat--color-secondary-shade-50: #9070f0;
+        --chat--color--primary: #1e3a8a;
+        --chat--color--primary-shade-50: #1e40af;
+        --chat--color--primary--shade-100: #1e3a8a;
+        --chat--color--secondary: #1e3a8a;
+        --chat--color-secondary-shade-50: #1e40af;
       }
     `;
     document.head.appendChild(style);
